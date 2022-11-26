@@ -45,13 +45,13 @@
         </ImageView>
 
         <EditText
-            android:id="@+id/txtPhone"
+            android:id="@+id/txtemail"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
 
             android:fontFamily="@font/poppins_light"
             android:hint="Email ID"
-            android:minHeight="40dp"
+            android:minHeight="48dp"
             android:textColor="@color/login"
             android:textColorHint="@color/login" />
     </LinearLayout>
@@ -67,7 +67,7 @@
         </ImageView>
 
         <EditText
-            android:id="@+id/txtPassWord"
+            android:id="@+id/txtpass"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
 
@@ -94,7 +94,7 @@
     </TextView>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnlogin"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -135,7 +135,6 @@
         android:background="@color/anh">
 
         <ImageView
-            android:id="@+id/imageView"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -145,7 +144,7 @@
             android:src="@drawable/google"/>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textviewgoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_light"
