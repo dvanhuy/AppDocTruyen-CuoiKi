@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="20dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:src="@drawable/signup_banner">
+
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Sign Up"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/signin_email">
+        </ImageView>
+
+        <EditText
+            android:id="@+id/txtPhone"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Email ID"
+            android:minHeight="40dp"
+            android:textColor="#6c798f"
+            android:fontFamily="@font/poppins_light"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/signup_fullname">
+        </ImageView>
+
+        <EditText
+            android:id="@+id/passsign_up"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:minHeight="40dp"
+            android:textColor="#6c798f"
+            android:fontFamily="@font/poppins_light"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/signup_mobile">
+        </ImageView>
+
+        <EditText
+            android:id="@+id/mobile"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Mobile"
+            android:minHeight="40dp"
+            android:textColor="#6c798f"
+            android:fontFamily="@font/poppins_light"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutSigup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By signing up, you're agree to our"
+            android:textSize="12dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chuyentemp"
+            android:text="Temps and Condition"
+            android:textSize="12dp"
+            android:layout_marginStart="3dp"
+            android:textColor="#246ad3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="and"
+            android:textSize="12dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Pivacy"
+            android:text="Pivacy Policy"
+            android:textSize="12dp"
+            android:layout_marginStart="5dp"
+            android:textColor="#246ad3"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/signin_botron"
+        android:backgroundTint="#0065ff"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Joined us before?"
+            android:textSize="15dp"
+            android:fontFamily="@font/poppins_light"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Login"
+            android:textColor="#246ad3"
+            android:textSize="15dp"
+            android:fontFamily="@font/poppins_light">
+        </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>
