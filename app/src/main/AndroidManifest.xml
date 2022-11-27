@@ -14,6 +14,13 @@
         android:theme="@style/Theme.AppDocTruyen_CuoiKi"
         tools:targetApi="31">
         <activity
+            android:name=".activity_reset_pass"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activity_forgot_pass"
             android:exported="false">
             <meta-data
