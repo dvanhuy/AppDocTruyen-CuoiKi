@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".activity_login">
+    android:gravity="center">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="250dp"
-        android:src="@drawable/banner">
+        android:src="@drawable/signin_banner">
 
     </ImageView>
 
@@ -25,8 +24,6 @@
             android:layout_marginLeft="45dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15dp"
-
-            android:fontFamily="@font/poppins_bold"
             android:text="Login"
             android:textColor="@color/black"
             android:textSize="30dp" />
@@ -41,19 +38,18 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:src="@drawable/email">
+            android:src="@drawable/signin_email">
         </ImageView>
 
         <EditText
-            android:id="@+id/txtemail"
+            android:id="@+id/txtPhone"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
 
-            android:fontFamily="@font/poppins_light"
             android:hint="Email ID"
-            android:minHeight="48dp"
-            android:textColor="@color/login"
-            android:textColorHint="@color/login" />
+            android:minHeight="40dp"
+            android:textColor="#6c798f"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -63,21 +59,17 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:src="@drawable/pass">
+            android:src="@drawable/signin_pass">
         </ImageView>
 
         <EditText
-            android:id="@+id/txtpass"
+            android:id="@+id/txtPassWord"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-
-            android:fontFamily="@font/poppins_light"
             android:hint="PassWord"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:textColor="@color/login"
-            android:textColorHint="@color/login">
-
+            android:textColor="#6c798f">
         </EditText>
     </LinearLayout>
 
@@ -86,23 +78,21 @@
         android:layout_height="25dp"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppins_light"
         android:text="Forgot Password?"
         android:textColor="@color/purple_500"
         android:textSize="15dp">
 
     </TextView>
 
-    <Button
-        android:id="@+id/btnlogin"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/botron"
-        android:fontFamily="@font/poppins"
+        android:background="@drawable/signin_botron"
         android:text="Login"
-        android:textColor="@color/white"
-        android:textColorHint="@color/forgotpassword" />
+        android:backgroundTint="#FF3636"
+        android:textColor="@color/white" />
 
 
     <View
@@ -132,22 +122,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.704"
-        android:background="@color/anh">
+        android:background="#f1f5f6">
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            android:src="@drawable/google"/>
+            android:src="@drawable/signin_googlee"/>
 
         <TextView
-            android:id="@+id/textviewgoogle"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_light"
             android:text="Login with google"
             android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -163,8 +153,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_light"
+            android:layout_height="match_parent"
             android:text="New to Logistics?"
             android:textSize="15dp"></TextView>
 
@@ -172,9 +161,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:fontFamily="@font/poppins_light"
             android:text="Register"
-            android:textColor="@color/login"
+            android:textColor="#6c798f"
             android:textSize="15dp">
 
         </TextView>
