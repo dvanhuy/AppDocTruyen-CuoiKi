@@ -1,12 +1,19 @@
 package com.example.appdoctruyen_cuoiki;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ViewFlipper;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,10 +26,12 @@ public class Fragment1 extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    ViewFlipper viewFlipper;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    Context thiscontext;
+    RecyclerView recyclerView;
 
     public Fragment1() {
         // Required empty public constructor
@@ -49,6 +58,13 @@ public class Fragment1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        int img[] = {R.drawable.home_viewflip_anh1, R.drawable.home_viewflip_anh2, R.drawable.home_viewflip_anh3, R.drawable.home_viewflip_anh4};
+
+
+
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -59,6 +75,35 @@ public class Fragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_1, container, false);
+        thiscontext = container.getContext();
+        View view = inflater.inflate(R.layout.fragment_1,container,false);
+        viewFlipper = view.findViewById(R.id.viewFlipper);
+        viewFlipper.setFlipInterval(3500);//3,5s
+        viewFlipper.setAutoStart(true);
+        viewFlipper.setInAnimation(thiscontext, android.R.anim.slide_in_left);
+        viewFlipper.setOutAnimation(thiscontext,android.R.anim.slide_out_right);
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
+        initDataRecycle();
+        return view;
+    }
+
+    public void initDataRecycle(){
+        LinearLayoutManager layoutManager = new LinearLayoutManager(thiscontext, LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(thiscontext,layoutManager.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
+
+        ArrayList<Truyen> dataTruyen = new ArrayList<>();
+
+        dataTruyen.add(new Truyen("Boruto New Generation", 350, R.drawable.home_list_truyen1));
+        dataTruyen.add(new Truyen("Tàn Chi Lệnh", 322, R.drawable.home_list_truyen2));
+        dataTruyen.add(new Truyen("Tình Yêu Trở Lại", 123, R.drawable.home_list_truyen3));
+        dataTruyen.add(new Truyen("Vương Quốc Bí Ẩn", 2243, R.drawable.home_list_truyen4));
+        dataTruyen.add(new Truyen("Tấm Cám", 3, R.drawable.home_list_truyen5));
+        dataTruyen.add(new Truyen("Truyện Kiều", 2, R.drawable.home_list_truyen6));
+
+        TruyenDeCuRecycleAdapter truyenAdapter = new TruyenDeCuRecycleAdapter(dataTruyen,thiscontext);
+        recyclerView.setAdapter(truyenAdapter);
     }
 }
