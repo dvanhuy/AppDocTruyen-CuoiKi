@@ -5,9 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.utils.widget.ImageFilterView;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -16,7 +22,7 @@ public class ReadBook extends AppCompatActivity {
     ImageFilterView imageView;
     ScrollView scrollviewcontent;
     LinearLayoutCompat linearLayoutCompat;
-    RelativeLayout favouritebutton,bookmarkbutton;
+    RelativeLayout favouritebutton,bookmarkbutton,settingbutton;
     int favourite = 0 ,bookmark = 0;
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -68,5 +74,37 @@ public class ReadBook extends AppCompatActivity {
                 }
             }
         });
+
+        settingbutton = findViewById(R.id.settingbutton);
+        settingbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                opendiaglog(Gravity.BOTTOM);
+            }
+        });
+    }
+
+    public void opendiaglog(int gravity){
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.settingtextdialog);
+        Window window = dialog.getWindow();
+        if (window == null){
+            return;
+        }
+
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        WindowManager.LayoutParams winLayoutAttributes = window.getAttributes();
+        winLayoutAttributes.gravity = gravity;
+        window.setAttributes(winLayoutAttributes);
+
+        if (Gravity.BOTTOM == gravity){
+            dialog.setCancelable(true);
+        }
+        else {
+            dialog.setCancelable(false);
+        }
+        dialog.show();
     }
 }
