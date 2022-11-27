@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
         android:src="@drawable/signin_banner">
-
     </ImageView>
 
     <LinearLayout
@@ -20,20 +19,23 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
+            android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15dp"
+            android:layout_marginLeft="70dp"
             android:text="Login"
             android:textColor="@color/black"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:fontFamily="@font/poppins_bold">
+
+        </TextView>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
 
         <ImageView
             android:layout_width="30dp"
@@ -45,17 +47,18 @@
             android:id="@+id/txtPhone"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-
             android:hint="Email ID"
             android:minHeight="40dp"
             android:textColor="#6c798f"
-            />
+            android:fontFamily="@font/poppins_light">
+
+        </EditText>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginLeft="25dp">
+        android:gravity="center">
         <ImageView
             android:layout_width="30dp"
             android:layout_height="match_parent"
@@ -69,18 +72,19 @@
             android:hint="PassWord"
             android:inputType="textPassword"
             android:minHeight="48dp"
-            android:textColor="#6c798f">
+            android:textColor="#6c798f"
+            android:fontFamily="@font/poppins_light">
         </EditText>
     </LinearLayout>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="90dp"
         android:text="Forgot Password?"
         android:textColor="@color/purple_500"
-        android:textSize="15dp">
+        android:textSize="15dp"
+        android:fontFamily="@font/poppins_light">
 
     </TextView>
 
@@ -91,8 +95,9 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/signin_botron"
         android:text="Login"
-        android:backgroundTint="#FF3636"
-        android:textColor="@color/white" />
+        android:backgroundTint="#0065ff"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"/>
 
 
     <View
@@ -107,7 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-
+        android:fontFamily="@font/poppins_light"
         android:text="OR"
         android:textColor="@color/black"
         android:textSize="16dp">
@@ -143,7 +148,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/poppins_light"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
@@ -155,7 +161,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="New to Logistics?"
-            android:textSize="15dp"></TextView>
+            android:textSize="15dp"
+            android:fontFamily="@font/poppins_light">
+
+        </TextView>
 
         <TextView
             android:layout_width="wrap_content"
@@ -163,7 +172,8 @@
             android:layout_marginLeft="5dp"
             android:text="Register"
             android:textColor="#6c798f"
-            android:textSize="15dp">
+            android:textSize="15dp"
+            android:fontFamily="@font/poppins_light">
 
         </TextView>
 
