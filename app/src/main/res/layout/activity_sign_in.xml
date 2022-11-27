@@ -47,6 +47,7 @@
             android:id="@+id/txtPhone"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:hint="Email ID"
             android:minHeight="40dp"
             android:textColor="#6c798f"
@@ -71,6 +72,7 @@
             android:layout_height="wrap_content"
             android:hint="PassWord"
             android:inputType="textPassword"
+            android:layout_marginLeft="10dp"
             android:minHeight="48dp"
             android:textColor="#6c798f"
             android:fontFamily="@font/poppins_light">
@@ -127,17 +129,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.704"
-        android:background="#f1f5f6">
+        android:background="@drawable/signin_bglogingg">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/signin_googlee"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            android:src="@drawable/signin_googlee"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView3"

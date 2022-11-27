@@ -23,6 +23,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginLeft="65dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Sign Up"
@@ -46,10 +48,11 @@
             android:id="@+id/txtPhone"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/poppins_light"
             android:hint="Email ID"
             android:minHeight="40dp"
-            android:textColor="#6c798f"
-            android:fontFamily="@font/poppins_light"/>
+            android:textColor="#6c798f" />
     </LinearLayout>
 
     <LinearLayout
@@ -65,9 +68,10 @@
         </ImageView>
 
         <EditText
-            android:id="@+id/passsign_up"
+            android:id="@+id/passsignup"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:hint="Full Name"
             android:minHeight="40dp"
             android:textColor="#6c798f"
@@ -93,11 +97,12 @@
             android:hint="Mobile"
             android:minHeight="40dp"
             android:textColor="#6c798f"
+            android:layout_marginLeft="10dp"
             android:fontFamily="@font/poppins_light"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layoutSigup"
+        android:id="@+id/layoutsigup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -136,7 +141,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Pivacy"
+            android:id="@+id/pivacy"
             android:text="Pivacy Policy"
             android:textSize="12dp"
             android:layout_marginStart="5dp"

@@ -66,6 +66,17 @@ public class Fragment4 extends Fragment {
                 startActivity(intent);
             }
         });
+
+
+        Button button3 = view.findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),SignUp.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
 
     }
