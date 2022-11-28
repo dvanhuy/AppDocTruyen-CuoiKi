@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChiTietTruyen.ChiTietTruyenFragment.MoTaFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Harry Potter và Hoàng tử lai
+(tiếng Anh: Harry Potter and the Half-Blood Prince  ) là quyển sách thứ sáu
+trong bộ sách giả tưởng nổi tiếng Harry Potter của tác giả J.K. Rowling.
+Cuộc phiêu lưu mới này gồm một loạt các khám phá về quá khứ của
+Chúa tể Voldemort, kèm theo những miêu tả sinh động về tuổi mới lớn
+với những xúc cảm ngây thơ, vui nhộn và nỗi căm hận đắng cay của Harry
+đối với Hoàng tử Lai." />
+
+</FrameLayout>
