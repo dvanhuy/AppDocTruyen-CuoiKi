@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "271049796281",
+    "project_id": "appdoctruyen-87ebe",
+    "storage_bucket": "appdoctruyen-87ebe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271049796281:android:97452a4fe760c4ec510968",
+        "android_client_info": {
+          "package_name": "com.example.appdoctruyen_cuoiki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271049796281-no58hqjgd2fbhi8u6b1305k1bdcbr9sh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC89AWMP39Z8dGrnyYvW7aG3yE-R0fUOVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271049796281-no58hqjgd2fbhi8u6b1305k1bdcbr9sh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
