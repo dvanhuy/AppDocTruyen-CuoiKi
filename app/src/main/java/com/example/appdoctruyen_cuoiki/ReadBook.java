@@ -82,6 +82,14 @@ public class ReadBook extends AppCompatActivity {
                 opendiaglog(Gravity.BOTTOM);
             }
         });
+
+        ImageView imageButton = findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     public void opendiaglog(int gravity){
