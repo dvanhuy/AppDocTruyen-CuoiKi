@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/readbook_bgdialog.xml" value="0.1675" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/readbook_btdialog.xml" value="0.1675" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/readbook_ic_descrease.xml" value="0.1675" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/readboox_ic_increase.xml" value="0.1675" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_read_book.xml" value="0.13703703703703704" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_1.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_3.xml" value="0.16018518518518518" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_4.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/line_decu.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/settingtextdialog.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen_CuoiKi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/AndroidJava/AppDocTruyen_CuoiKi/app/src/main/res/drawable-v24/list_bordertop.xml" value="0.1675" />
         <entry key="..\:/AndroidJava/AppDocTruyen_CuoiKi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />

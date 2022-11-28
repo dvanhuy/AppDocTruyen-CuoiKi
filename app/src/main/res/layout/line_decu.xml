@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="150dp"
-    android:layout_height="240dp">
+    android:layout_height="220dp">
 
 
     <ImageView
@@ -21,7 +21,7 @@
     <TextView
         android:id="@+id/txtTenTacPham"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
+        android:layout_height="20dp"
         android:layout_marginTop="5dp"
         android:text="Tên"
         android:ellipsize="end"
@@ -37,7 +37,7 @@
         android:id="@+id/txtSoChap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="2dp"
         android:text="Chương 27"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"

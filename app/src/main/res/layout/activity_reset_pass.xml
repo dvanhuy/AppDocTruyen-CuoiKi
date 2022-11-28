@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="60dp"
+    tools:context=".activity_reset_pass">
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_back">
+    </ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:src="@drawable/reset_banner">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset\nPassword?"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:fontFamily="@font/poppins_bold">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/signin_pass">
+        </ImageView>
+
+        <EditText
+            android:id="@+id/resetpass"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="New password"
+            android:minHeight="40dp"
+            android:textColor="#6c798f"
+            android:fontFamily="@font/poppins_light">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/signin_pass">
+        </ImageView>
+
+        <EditText
+            android:id="@+id/confirmpass"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Confirm new password"
+            android:minHeight="40dp"
+            android:textColor="#6c798f"
+            android:fontFamily="@font/poppins_light">
+        </EditText>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnsubmit"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/signin_botron"
+        android:text="Submit"
+        android:backgroundTint="#0065ff"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
