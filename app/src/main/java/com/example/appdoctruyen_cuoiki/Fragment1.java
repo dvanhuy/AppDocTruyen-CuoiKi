@@ -59,11 +59,6 @@ public class Fragment1 extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        int img[] = {R.drawable.home_viewflip_anh1, R.drawable.home_viewflip_anh2, R.drawable.home_viewflip_anh3, R.drawable.home_viewflip_anh4};
-
-
-
-
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -78,11 +73,10 @@ public class Fragment1 extends Fragment {
         thiscontext = container.getContext();
         View view = inflater.inflate(R.layout.fragment_1,container,false);
         viewFlipper = view.findViewById(R.id.viewFlipper);
-        viewFlipper.setFlipInterval(3500);//3,5s
+        viewFlipper.setFlipInterval(3000);//3s
         viewFlipper.setAutoStart(true);
         viewFlipper.setInAnimation(thiscontext, android.R.anim.slide_in_left);
         viewFlipper.setOutAnimation(thiscontext,android.R.anim.slide_out_right);
-
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         initDataRecycle();
         return view;

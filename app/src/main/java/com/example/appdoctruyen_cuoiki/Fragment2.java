@@ -1,12 +1,19 @@
 package com.example.appdoctruyen_cuoiki;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,8 @@ public class Fragment2 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private RecyclerView recyclerView;
+    Context thiscontext;
 
     public Fragment2() {
         // Required empty public constructor
@@ -49,6 +58,8 @@ public class Fragment2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -58,7 +69,28 @@ public class Fragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_2, container, false);
+        View view = inflater.inflate(R.layout.fragment_2, container, false);
+        recyclerView = view.findViewById(R.id.recylerViewKhamPha);
+        initDataRecycleKhamPha();
+        return view;
+    }
+
+    public void initDataRecycleKhamPha(){
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(thiscontext,2);
+        recyclerView.setLayoutManager(gridLayoutManager);
+
+        ArrayList<TheLoaiTruyen> dataTheLoai = new ArrayList<>();
+        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+
+        TheLoaiTruyenRecycleAdapter theLoaiAdapter = new TheLoaiTruyenRecycleAdapter(dataTheLoai,thiscontext);
+        recyclerView.setAdapter(theLoaiAdapter);
     }
 }

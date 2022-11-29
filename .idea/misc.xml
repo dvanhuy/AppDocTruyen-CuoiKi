@@ -56,10 +56,16 @@
         <entry key="..\:/JavaAndroid/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_chapter_list.xml" value="0.2453125" />
         <entry key="..\:/JavaAndroid/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_mo_ta.xml" value="0.259375" />
         <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/drawable/home_bg_bt_tieptuc.xml" value="0.129" />
+        <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/drawable/home_bg_searchbook.xml" value="0.203" />
+        <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/drawable/khampha_background_line_cate.xml" value="0.203" />
+        <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/drawable/khampha_background_search.xml" value="0.203" />
+        <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/drawable/khampha_bg_searchvd.xml" value="0.203" />
         <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_1.xml" value="0.35733695652173914" />
+        <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_2.xml" value="0.35733695652173914" />
         <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_3.xml" value="0.35733695652173914" />
         <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_4.xml" value="0.35733695652173914" />
         <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/layout/line_decu.xml" value="0.35733695652173914" />
+        <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/layout/line_khampha.xml" value="0.35733695652173914" />
       </map>
     </option>
   </component>
