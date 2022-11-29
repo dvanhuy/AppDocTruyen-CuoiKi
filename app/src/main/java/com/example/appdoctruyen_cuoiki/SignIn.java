@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,7 +47,7 @@ public class SignIn extends AppCompatActivity {
         });
         txtEmail = (EditText) findViewById(R.id.txtemail);
         txtPassWord = (EditText) findViewById(R.id.txtPassWord);
-        Button btnLogin = findViewById(R.id.btnLogin);
+        Button btnLogin = findViewById(R.id.btnSignUp);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,21 +62,21 @@ public class SignIn extends AppCompatActivity {
         pass = txtPassWord.getText().toString();
 
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Nhap Email !",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Nhập Email !",Toast.LENGTH_SHORT).show();
             return;
         }
         if(TextUtils.isEmpty(pass)){
-            Toast.makeText(this,"Nhap Password !",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Nhập mật khẩu !",Toast.LENGTH_SHORT).show();
             return;
         }
 
         mAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(),"Dang nhap thanh cong !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Đăng nhập thành công !", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Dang nhap asdasda khong thanh cong !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Đăng nhập thất bại !", Toast.LENGTH_SHORT).show();
                 }
             }
         });

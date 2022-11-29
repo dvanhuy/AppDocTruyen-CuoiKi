@@ -28,10 +28,6 @@ public class Home extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
-        badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.nav_notification);
-        badgeDrawable.setVisible(true);
-        badgeDrawable.setBadgeTextColor(Color.WHITE);
-        badgeDrawable.setNumber(4);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -44,7 +40,6 @@ public class Home extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment2).commit();
                         return true;
                     case R.id.nav_notification:
-                        badgeDrawable.setVisible(false);
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment3).commit();
                         return true;
                     case R.id.nav_profile:

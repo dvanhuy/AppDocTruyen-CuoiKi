@@ -21,15 +21,6 @@ public class Fragment4 extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment4.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Fragment4 newInstance(String param1, String param2) {
         Fragment4 fragment = new Fragment4();
         Bundle args = new Bundle();
@@ -49,8 +40,8 @@ public class Fragment4 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_4, container, false);
-        Button button = view.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button profile_login = view.findViewById(R.id.profile_login);
+        profile_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(),SignIn.class);
@@ -58,18 +49,8 @@ public class Fragment4 extends Fragment {
             }
         });
 
-        Button button2 = view.findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),ReadBook.class);
-                startActivity(intent);
-            }
-        });
-
-
-        Button button3 = view.findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
+        Button profile_signup = view.findViewById(R.id.profile_signup);
+        profile_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(),SignUp.class);

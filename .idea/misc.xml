@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/ic_compass_line.xml" value="0.1265" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/khampha_bg_searchvd.xml" value="0.1265" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/navigation_ic_home.xml" value="0.1265" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/navigation_ic_list.xml" value="0.121" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/navigation_ic_profile.xml" value="0.1265" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/navigation_ic_star.xml" value="0.1265" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/navigattion_ic_discover.xml" value="0.1265" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/profile_bgbutton.xml" value="0.1" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/readbook_bgdialog.xml" value="0.1675" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/readbook_btdialog.xml" value="0.1675" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/readbook_ic_descrease.xml" value="0.1675" />
@@ -21,7 +29,9 @@
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_chapter_list.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_mo_ta.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/line_decu.xml" value="0.25" />
-        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/settingtextdialog.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/line_khampha.xml" value="0.19814814814814816" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/settingtextdialog.xml" value="0.1" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20185185185185187" />
         <entry key="..\:/AndroidJava/AppDocTruyen_CuoiKi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/AndroidJava/AppDocTruyen_CuoiKi/app/src/main/res/drawable-v24/list_bordertop.xml" value="0.1675" />
         <entry key="..\:/AndroidJava/AppDocTruyen_CuoiKi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />

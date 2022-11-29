@@ -115,7 +115,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_centerInParent="true"
-                app:srcCompat="@drawable/navigation_ic_list" />
+                app:srcCompat="@drawable/readbook_ic_list" />
         </RelativeLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
