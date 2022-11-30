@@ -14,17 +14,6 @@
         android:layout_height="match_parent"
         android:background="@color/white">
 
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -227,7 +216,7 @@
                         android:layout_marginBottom="16dp"
                         android:layout_centerHorizontal="true"
                         android:background="@drawable/home_bg_bt_tieptuc"
-                        android:text="Dọc từ đầu"
+                        android:text="Đọc từ đầu"
                         android:textColor="#064B81"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -252,39 +241,25 @@
                             android:id="@+id/tabItemDetails"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Mô tả"/>
+                            android:text="Mô tả" />
+
                         <com.google.android.material.tabs.TabItem
                             android:id="@+id/tabItemChapter"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Danh sách chương"/>
+                            android:text="Danh sách chương" />
 
                     </com.google.android.material.tabs.TabLayout>
-                    
+
                     <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/tabViewPager"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_below="@+id/tabLayout"/>
+                        android:layout_below="@+id/tabLayout" />
 
                 </RelativeLayout>
 
             </RelativeLayout>
-
-        </FrameLayout>
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            app:labelVisibilityMode="unlabeled"
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            android:background="@drawable/navigation_bgnavi"
-            app:itemIconTint="@color/color_nav_item"
-            app:menu="@menu/bottom_nav_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
