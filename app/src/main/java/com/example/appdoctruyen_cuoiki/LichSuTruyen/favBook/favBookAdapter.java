@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.appdoctruyen_cuoiki.Fragment3;
 import com.example.appdoctruyen_cuoiki.R;
 
 import java.util.List;
@@ -22,11 +23,6 @@ public class favBookAdapter extends RecyclerView.Adapter<favBookAdapter.favBookV
     public favBookAdapter(Context mContext, List<favBook> mListFavBook) {
         this.mContext = mContext;
         this.mListFavBook = mListFavBook;
-    }
-
-    public void setData(List<favBook> list){
-        this.mListFavBook = list;
-        notifyDataSetChanged();
     }
 
     @NonNull
@@ -65,8 +61,8 @@ public class favBookAdapter extends RecyclerView.Adapter<favBookAdapter.favBookV
     ImageView hinhAnh;
     public favBookViewHolder(@NonNull View itemView) {
         super(itemView);
-        ten = itemView.findViewById(R.id.img_favbook);
-        hinhAnh = itemView.findViewById(R.id.tv_favbook);
+        ten = itemView.findViewById(R.id.tv_favbook);
+        hinhAnh = itemView.findViewById(R.id.img_favbook);
     }
 }
 }
