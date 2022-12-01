@@ -19,7 +19,6 @@ import java.util.List;
 
 public class favBookFragment extends Fragment {
 
-    View v;
     private RecyclerView rcvFav;
     private List<favBook> firstFavBook;
 
@@ -31,13 +30,13 @@ public class favBookFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_fav_book, container, false);
-        rcvFav = (RecyclerView) v.findViewById(R.id.rcv_favBook);
+        View view = inflater.inflate(R.layout.fragment_fav_book, container, false);
+        rcvFav = (RecyclerView) view.findViewById(R.id.rcv_favBook);
         favBookAdapter adapter = new favBookAdapter(getContext(),firstFavBook);
         //rcvNovel.setLayoutManager(new GridLayoutManager(getContext(), 3));
         rcvFav.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcvFav.setAdapter(adapter);
-        return v;
+        return view;
     }
 
     @Override

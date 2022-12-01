@@ -28,9 +28,8 @@ public class favBookAdapter extends RecyclerView.Adapter<favBookAdapter.favBookV
     @NonNull
     @Override
     public favBookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v;
-        v = LayoutInflater.from(mContext).inflate(R.layout.item_favbook,parent,false);
-        favBookViewHolder novelViewHolder = new favBookViewHolder(v);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_favbook,parent,false);
+        favBookViewHolder novelViewHolder = new favBookViewHolder(view);
 
         return novelViewHolder;
     }
