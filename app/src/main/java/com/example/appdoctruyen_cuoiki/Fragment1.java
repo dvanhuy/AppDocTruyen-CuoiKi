@@ -78,7 +78,7 @@ public class Fragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        thiscontext = container.getContext();
+        thiscontext = getContext();
         View view = inflater.inflate(R.layout.fragment_1,container,false);
         viewFlipper = view.findViewById(R.id.viewFlipper);
         viewFlipper.setFlipInterval(3000);//3s
