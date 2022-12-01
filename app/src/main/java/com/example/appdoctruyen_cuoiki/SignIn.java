@@ -74,6 +74,8 @@ public class SignIn extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(getApplicationContext(),"Đăng nhập thành công !", Toast.LENGTH_SHORT).show();
+                    setResult(RESULT_OK);
+                    finish();
                 }
                 else {
                     Toast.makeText(getApplicationContext(),"Đăng nhập thất bại !", Toast.LENGTH_SHORT).show();

@@ -1,10 +1,16 @@
 package com.example.appdoctruyen_cuoiki;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,8 +50,8 @@ public class Fragment4 extends Fragment {
         profile_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),SignIn.class);
-                startActivity(intent);
+                Home home = (Home) getActivity();
+                home.startActivitySignIn();
             }
         });
 
@@ -57,8 +63,11 @@ public class Fragment4 extends Fragment {
                 startActivity(intent);
             }
         });
-
         return view;
-
     }
+
+
+
+
+
 }
