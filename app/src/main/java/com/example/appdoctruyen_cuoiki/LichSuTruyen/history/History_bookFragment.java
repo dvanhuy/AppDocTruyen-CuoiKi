@@ -21,7 +21,6 @@ import java.util.List;
 
 public class History_bookFragment extends Fragment {
 
-    View v;
     private RecyclerView rcvHis;
     private List<history> firstHis;
 
@@ -32,13 +31,13 @@ public class History_bookFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_history_book, container, false);
-        rcvHis = (RecyclerView) v.findViewById(R.id.rcv_historyBook);
+        View view = inflater.inflate(R.layout.fragment_history_book, container, false);
+        rcvHis = (RecyclerView) view.findViewById(R.id.rcv_historyBook);
         historyAdapter adapter = new historyAdapter(getContext(),firstHis);
         //rcvNovel.setLayoutManager(new GridLayoutManager(getContext(), 3));
         rcvHis.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcvHis.setAdapter(adapter);
-        return v;
+        return view;
     }
 
     @Override
