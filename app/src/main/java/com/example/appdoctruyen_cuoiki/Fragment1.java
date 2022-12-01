@@ -3,6 +3,7 @@ package com.example.appdoctruyen_cuoiki;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ViewFlipper;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -31,6 +38,7 @@ public class Fragment1 extends Fragment {
     private String mParam1;
     private String mParam2;
     Context thiscontext;
+    DatabaseReference database;
     RecyclerView recyclerView;
 
     public Fragment1() {
@@ -87,17 +95,25 @@ public class Fragment1 extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(thiscontext,layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
-
+        database = FirebaseDatabase.getInstance().getReference("Truyen");
         ArrayList<Truyen> dataTruyen = new ArrayList<>();
-
-        dataTruyen.add(new Truyen("Boruto New Generation", 350, R.drawable.home_list_truyen1));
-        dataTruyen.add(new Truyen("Tàn Chi Lệnh", 322, R.drawable.home_list_truyen2));
-        dataTruyen.add(new Truyen("Tình Yêu Trở Lại", 123, R.drawable.home_list_truyen3));
-        dataTruyen.add(new Truyen("Vương Quốc Bí Ẩn", 2243, R.drawable.home_list_truyen4));
-        dataTruyen.add(new Truyen("Tấm Cám", 3, R.drawable.home_list_truyen5));
-        dataTruyen.add(new Truyen("Truyện Kiều", 2, R.drawable.home_list_truyen6));
-
         TruyenDeCuRecycleAdapter truyenAdapter = new TruyenDeCuRecycleAdapter(dataTruyen,thiscontext);
         recyclerView.setAdapter(truyenAdapter);
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren())
+                {
+                    Truyen truyen = dataSnapshot.getValue(Truyen.class);
+                    String soChuong = String.valueOf(dataSnapshot.child("sochuong").getValue());
+                    truyen.setSoChuong(soChuong);
+                    dataTruyen.add(truyen);
+                }
+                truyenAdapter.notifyDataSetChanged();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
     }
 }

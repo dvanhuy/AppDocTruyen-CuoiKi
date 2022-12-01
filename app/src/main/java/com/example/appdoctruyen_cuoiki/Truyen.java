@@ -1,39 +1,57 @@
 package com.example.appdoctruyen_cuoiki;
 
 public class Truyen{
-    private String ten;
-    private Integer soChap, hinhAnh;
+    private String mota,tacgia,tentruyen,theloai;
+    private String soChuong;
 
-    public Truyen(String ten, Integer soChap, Integer hinhAnh) {
-        this.ten = ten;
-        this.soChap = soChap;
-        this.hinhAnh = hinhAnh;
+    public Truyen(String mota, String tacgia, String tentruyen, String theloai, String soChuong) {
+        this.mota = mota;
+        this.tacgia = tacgia;
+        this.tentruyen = tentruyen;
+        this.theloai = theloai;
+        this.soChuong = soChuong;
     }
 
     public Truyen() {
     }
 
-    public String getTen() {
-        return ten;
+    public String getMota() {
+        return mota;
     }
 
-    public void setTen(String ten) {
-        this.ten = ten;
+    public void setMota(String mota) {
+        this.mota = mota;
     }
 
-    public Integer getSoChap() {
-        return soChap;
+    public String getTacgia() {
+        return tacgia;
     }
 
-    public void setSoChap(Integer soChap) {
-        this.soChap = soChap;
+    public void setTacgia(String tacgia) {
+        this.tacgia = tacgia;
     }
 
-    public Integer getHinhAnh() {
-        return hinhAnh;
+    public String getTentruyen() {
+        return tentruyen;
     }
 
-    public void setHinhAnh(Integer hinhAnh) {
-        this.hinhAnh = hinhAnh;
+    public void setTentruyen(String tentruyen) {
+        this.tentruyen = tentruyen;
+    }
+
+    public String getTheloai() {
+        return theloai;
+    }
+
+    public void setTheloai(String theloai) {
+        this.theloai = theloai;
+    }
+
+    public String getSoChuong() {
+        return soChuong;
+    }
+
+    public void setSoChuong(String soChuong) {
+        this.soChuong = soChuong;
     }
 }

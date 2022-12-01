@@ -32,9 +32,9 @@ public class TruyenDeCuRecycleAdapter extends RecyclerView.Adapter<TruyenDeCuRec
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.ten.setText(listTruyen.get(position).getTen());
-        holder.soChap.setText("Chương " +listTruyen.get(position).getSoChap());
-        holder.hinhAnh.setImageResource(listTruyen.get(position).getHinhAnh());
+        holder.ten.setText(listTruyen.get(position).getTentruyen());
+        holder.soChap.setText("Chương " + listTruyen.get(position).getSoChuong());
+//        holder.hinhAnh.setImageResource(listTruyen.get(position).getHinhAnh());
     }
 
     @Override
