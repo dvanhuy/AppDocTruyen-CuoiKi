@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forgot\nPassword?"
+            android:text="Quên\nMật Khẩu?"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:fontFamily="@font/poppins_bold">
@@ -41,7 +41,7 @@
         android:layout_marginTop="10dp"
         android:textColor="@color/black"
         android:textSize="15dp"
-        android:text="Don't worry! It happens. Please enter the\naddress associated with your account.">
+        android:text="Đừng lo lắng! Vui lòng nhập địa chỉ được \nliên kết với tài khoản của bạn.">
     </TextView>
 
     <LinearLayout
@@ -60,7 +60,7 @@
             android:id="@+id/txtemail"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="Email ID"
+            android:hint="Nhập EMAIL"
             android:minHeight="40dp"
             android:textColor="#6c798f"
             android:fontFamily="@font/poppins_light">

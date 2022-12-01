@@ -23,7 +23,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="70dp"
-            android:text="Login"
+            android:text="Đăng nhập"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:fontFamily="@font/poppins_bold">
@@ -48,7 +48,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:hint="Email ID"
+            android:hint="Nhập Email"
             android:minHeight="40dp"
             android:textColor="#6c798f"
             android:fontFamily="@font/poppins_light">
@@ -70,7 +70,7 @@
             android:id="@+id/txtPassWord"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="PassWord"
+            android:hint="Nhập mật khẩu"
             android:inputType="textPassword"
             android:layout_marginLeft="10dp"
             android:minHeight="48dp"
@@ -85,7 +85,7 @@
         android:layout_height="25dp"
         android:layout_marginLeft="90dp"
         android:fontFamily="@font/poppins_light"
-        android:text="Forgot Password?"
+        android:text="Quên mật khẩu?"
         android:textColor="@color/purple_500"
         android:textSize="15dp">
 
@@ -97,7 +97,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/signin_botron"
-        android:text="Login"
+        android:text="Đăng nhập"
         android:backgroundTint="#0065ff"
         android:textColor="@color/white"
         android:fontFamily="@font/poppins_bold"/>
@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins_light"
-        android:text="OR"
+        android:text="HOẶC"
         android:textColor="@color/black"
         android:textSize="16dp">
 
@@ -146,7 +146,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login with google"
+            android:text="Đăng nhập với Google"
             android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -163,7 +163,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="New to Logistics?"
+            android:text="Bạn chưa có tài khoản?"
             android:textSize="15dp"
             android:fontFamily="@font/poppins_light">
 
@@ -174,7 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Register"
+            android:text="Đăng kí"
             android:textColor="#6c798f"
             android:textSize="15dp"
             android:fontFamily="@font/poppins_light">

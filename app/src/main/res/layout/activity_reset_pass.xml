@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reset\nPassword?"
+            android:text="Quên\nMật Khẩu?"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:fontFamily="@font/poppins_bold">
@@ -55,7 +55,7 @@
             android:id="@+id/resetpass"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="New password"
+            android:hint="Nhập mật khẩu mới"
             android:minHeight="40dp"
             android:textColor="#6c798f"
             android:fontFamily="@font/poppins_light">
@@ -76,7 +76,7 @@
             android:id="@+id/confirmpass"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:hint="Confirm new password"
+            android:hint="Xác nhận mật khẩu"
             android:minHeight="40dp"
             android:textColor="#6c798f"
             android:fontFamily="@font/poppins_light">
