@@ -63,7 +63,7 @@
             android:textColor="@color/black"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="15dp"
-            android:textSize="25dp"
+            android:textSize="23dp"
             android:text="Ứng dụng"
             android:fontFamily="@font/roboto_bold">
         </TextView>
@@ -83,10 +83,11 @@
         </ImageView>
 
         <TextView
-            android:layout_marginLeft="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="Lưu trữ"
+            android:textColor="#505050"
             android:textSize="20dp">
 
         </TextView>
@@ -110,6 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="Cài đặt"
+            android:textColor="#505050"
             android:textSize="20dp">
 
         </TextView>
@@ -133,6 +135,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="Câu hỏi thường gặp"
+            android:textColor="#505050"
             android:textSize="20dp">
 
         </TextView>
@@ -156,6 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="Phần mở rộng"
+            android:textColor="#505050"
             android:textSize="20dp">
 
         </TextView>
@@ -196,8 +200,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="Theo dõi Fanpage"
-            android:textSize="20dp">
-        </TextView>
+            android:textColor="#505050"
+            android:textSize="20dp"></TextView>
     </LinearLayout>
 
     <LinearLayout
@@ -218,8 +222,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="Tham gia Discord"
-            android:textSize="20dp">
-        </TextView>
+            android:textColor="#505050"
+            android:textSize="20dp"></TextView>
     </LinearLayout>
 
     <LinearLayout

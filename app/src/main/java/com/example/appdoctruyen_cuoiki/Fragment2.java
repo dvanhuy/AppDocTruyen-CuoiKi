@@ -1,12 +1,12 @@
 package com.example.appdoctruyen_cuoiki;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -78,17 +78,43 @@ public class Fragment2 extends Fragment {
     public void initDataRecycleKhamPha(){
         GridLayoutManager gridLayoutManager = new GridLayoutManager(thiscontext,2);
         recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                int position = parent.getChildAdapterPosition(view); // item position
+                int spanCount = 2;
+                int spacing = 30;//spacing between views in grid
+                int column = position % spanCount;
+                Boolean includeEdge= false;
+                if (includeEdge) {
+                    outRect.left = spacing - column * spacing / spanCount; // spacing - column * ((1f / spanCount) * spacing)
+                    outRect.right = (column + 1) * spacing / spanCount; // (column + 1) * ((1f / spanCount) * spacing)
 
+                    if (position < spanCount) { // top edge
+                        outRect.top = spacing;
+                    }
+                    outRect.bottom = spacing; // item bottom
+                } else {
+                    outRect.left = column * spacing / spanCount; // column * ((1f / spanCount) * spacing)
+                    outRect.right = spacing - (column + 1) * spacing / spanCount; // spacing - (column + 1) * ((1f /    spanCount) * spacing)
+                    if (position >= spanCount) {
+                        outRect.top = spacing; // item top
+                    }
+                }
+            }
+        });
         ArrayList<TheLoaiTruyen> dataTheLoai = new ArrayList<>();
-        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
-        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
-        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
-        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
-        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
-        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
-        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
-        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
-        dataTheLoai.add(new TheLoaiTruyen("Tình yêu", R.drawable.khampha_img_love));
+        dataTheLoai.add(new TheLoaiTruyen("Tiên Hiệp", R.drawable.khampha_ic_sword));
+        dataTheLoai.add(new TheLoaiTruyen("Huyền Huyễn", R.drawable.khampha_ic_rong));
+        dataTheLoai.add(new TheLoaiTruyen("Lịch Sử", R.drawable.khampha_ic_book));
+        dataTheLoai.add(new TheLoaiTruyen("Võng Du", R.drawable.khampha_ic_game));
+        dataTheLoai.add(new TheLoaiTruyen("Đô Thị", R.drawable.khampha_ic_city));
+        dataTheLoai.add(new TheLoaiTruyen("Đồng Nhân", R.drawable.khampha_ic_dongnhan));
+        dataTheLoai.add(new TheLoaiTruyen("Trinh Thám", R.drawable.khampha_ic_thamtu));
+        dataTheLoai.add(new TheLoaiTruyen("Hệ Thống", R.drawable.khampha_ic_hethong));
+        dataTheLoai.add(new TheLoaiTruyen("Linh Dị", R.drawable.khampha_ic_linhdi));
+        dataTheLoai.add(new TheLoaiTruyen("Cổ Đại", R.drawable.khampha_ic_codai));
+        dataTheLoai.add(new TheLoaiTruyen("Dị Giới", R.drawable.khampha_ic_digioi));
 
         TheLoaiTruyenRecycleAdapter theLoaiAdapter = new TheLoaiTruyenRecycleAdapter(dataTheLoai,thiscontext);
         recyclerView.setAdapter(theLoaiAdapter);
