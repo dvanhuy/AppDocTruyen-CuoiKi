@@ -26,11 +26,6 @@ public class historyAdapter extends RecyclerView.Adapter<historyAdapter.historyV
         this.mListHistory = mListHistory;
     }
 
-    public void setData(List<history> list){
-        this.mListHistory = list;
-        notifyDataSetChanged();
-    }
-
     @NonNull
     @Override
     public historyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -67,8 +62,8 @@ public class historyAdapter extends RecyclerView.Adapter<historyAdapter.historyV
         ImageView hinhAnh;
         public historyViewHolder(@NonNull View itemView) {
             super(itemView);
-            ten = itemView.findViewById(R.id.img_history);
-            hinhAnh = itemView.findViewById(R.id.tv_history);
+            ten = itemView.findViewById(R.id.tv_history);
+            hinhAnh = itemView.findViewById(R.id.img_history);
         }
     }
 }
