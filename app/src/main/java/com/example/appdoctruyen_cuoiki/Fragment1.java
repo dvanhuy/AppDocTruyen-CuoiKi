@@ -41,6 +41,7 @@ public class Fragment1 extends Fragment {
     DatabaseReference database;
     RecyclerView recyclerView;
 
+
     public Fragment1() {
         // Required empty public constructor
     }
@@ -107,6 +108,8 @@ public class Fragment1 extends Fragment {
                     Truyen truyen = dataSnapshot.getValue(Truyen.class);
                     String soChuong = String.valueOf(dataSnapshot.child("sochuong").getValue());
                     truyen.setSoChuong(soChuong);
+                    String imgURL = String.valueOf(dataSnapshot.child("image").getValue());
+                    truyen.setImage(imgURL);
                     dataTruyen.add(truyen);
                 }
                 truyenAdapter.notifyDataSetChanged();

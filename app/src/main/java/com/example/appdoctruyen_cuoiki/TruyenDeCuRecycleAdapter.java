@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class TruyenDeCuRecycleAdapter extends RecyclerView.Adapter<TruyenDeCuRecycleAdapter.ViewHolder>{
@@ -35,6 +37,7 @@ public class TruyenDeCuRecycleAdapter extends RecyclerView.Adapter<TruyenDeCuRec
         holder.ten.setText(listTruyen.get(position).getTentruyen());
         holder.soChap.setText("Chương " + listTruyen.get(position).getSoChuong());
 //        holder.hinhAnh.setImageResource(listTruyen.get(position).getHinhAnh());
+        Picasso.get().load(listTruyen.get(position).getImage()).into(holder.hinhAnh);
     }
 
     @Override
