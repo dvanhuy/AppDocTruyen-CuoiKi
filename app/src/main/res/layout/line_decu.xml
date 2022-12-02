@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemclick"
     android:layout_width="150dp"
     android:layout_height="220dp">
 
@@ -9,8 +10,6 @@
     <ImageView
         android:id="@+id/imageViewLineDeCu"
         android:layout_width="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_height="170dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,9 +22,9 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginTop="5dp"
-        android:text="Tên"
         android:ellipsize="end"
         android:maxLines="1"
+        android:text="Tên"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -39,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:text="Chương 27"
+        android:textColor="#454545"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

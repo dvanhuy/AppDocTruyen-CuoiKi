@@ -7,9 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FFF8F8"
     android:fillViewport="true">
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white">
@@ -29,7 +27,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageButton"
+                        android:id="@+id/imageButtonback"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_marginStart="20dp"
@@ -70,29 +68,31 @@
                     android:layout_height="274dp"
                     android:layout_below="@+id/constraintLayout"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="10dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
                     app:srcCompat="@drawable/home_img_truyendangdoc" />
+
                 <TextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Harry Potter và Hoàng tử lai"
+                    android:layout_below="@id/imageView5"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:textStyle="bold"
-                    android:layout_below="@id/imageView5"
-                    android:textSize="20dp"/>
+                    android:text="Harry Potter và Hoàng tử lai"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tác giả: J. K. Rowling"
+                    android:layout_below="@id/title"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:textStyle="italic"
-                    android:layout_below="@id/title"
-                    android:textSize="15dp"/>
+                    android:text="Tác giả: J. K. Rowling"
+                    android:textSize="15dp"
+                    android:textStyle="italic" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardview"
@@ -147,6 +147,7 @@
                                 android:textSize="20sp" />
 
                             <TextView
+                                android:id="@+id/sochuongchitiet"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:paddingTop="10dp"

@@ -1,6 +1,7 @@
 package com.example.appdoctruyen_cuoiki;
 
 public class Truyen{
+    private String key;
     private String mota,tacgia,tentruyen,theloai;
     private String soChuong, image;
 
@@ -70,5 +71,13 @@ public class Truyen{
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyen;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -96,5 +97,11 @@ public class Home extends AppCompatActivity {
     public void logOut(){
         dangnhap = false;
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment4).commit();
+    }
+
+    public void goToDetailTruyen(String idtruyen){
+        Intent intent = new Intent(Home.this, ChiTietTruyen.class);
+        intent.putExtra("idtruyen",idtruyen);
+        startActivity(intent);
     }
 }

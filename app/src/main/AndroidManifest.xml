@@ -30,9 +30,9 @@
         <activity
             android:name=".SignIn"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".ChiTietTruyen.ChiTietTruyen"-->
-<!--            android:exported="false"/>-->
+        <activity
+            android:name=".ChiTietTruyen.ChiTietTruyen"
+            android:exported="false"/>
         <activity
             android:name=".Home"
             android:exported="true">

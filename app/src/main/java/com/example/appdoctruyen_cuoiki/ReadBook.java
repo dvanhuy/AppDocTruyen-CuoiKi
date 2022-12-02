@@ -1,15 +1,18 @@
 package com.example.appdoctruyen_cuoiki;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.utils.widget.ImageFilterView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -17,6 +20,13 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ReadBook extends AppCompatActivity {
     ImageFilterView imageView;
@@ -24,6 +34,8 @@ public class ReadBook extends AppCompatActivity {
     LinearLayoutCompat linearLayoutCompat;
     RelativeLayout favouritebutton,bookmarkbutton,settingbutton;
     int favourite = 0 ,bookmark = 0;
+    DatabaseReference databaseReference;
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,13 +95,33 @@ public class ReadBook extends AppCompatActivity {
             }
         });
 
-        ImageView imageButton = findViewById(R.id.imageButton);
+        ImageView imageButton = findViewById(R.id.imageButtonback);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+
+
+        Intent intent = getIntent();
+        String idtruyen =intent.getStringExtra("truyen");
+        String idchap =intent.getStringExtra("chuong");
+        Log.d("idtruyen", idtruyen);
+        Log.d("idchap", idchap);
+        TextView textcontent = findViewById(R.id.textcontent);
+        TextView namechap = findViewById(R.id.namechap);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Truyen");
+        databaseReference.child(idtruyen).child("chuong").child(idchap).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                DataSnapshot dataSnapshot = task.getResult();
+                textcontent.setText(String.valueOf(dataSnapshot.child("noidung").getValue()));
+                namechap.setText(String.valueOf(dataSnapshot.child("tenchuong").getValue()));
+            }
+        });
+
     }
 
     public void opendiaglog(int gravity){
