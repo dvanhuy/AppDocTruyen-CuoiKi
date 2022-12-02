@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <ImageView
         android:layout_width="300dp"
@@ -49,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:hint="Nhập Email"
+            android:textColorHint="#6c798f"
             android:minHeight="40dp"
             android:textColor="#6c798f"
             android:fontFamily="@font/poppins_light">
@@ -75,6 +77,7 @@
             android:layout_marginLeft="10dp"
             android:minHeight="48dp"
             android:textColor="#6c798f"
+            android:textColorHint="#6c798f"
             android:fontFamily="@font/poppins_light">
         </EditText>
     </LinearLayout>
@@ -148,6 +151,7 @@
             android:layout_height="wrap_content"
             android:text="Đăng nhập với Google"
             android:textSize="16dp"
+            android:textColor="#2E2E2E"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -165,6 +169,7 @@
             android:layout_height="match_parent"
             android:text="Bạn chưa có tài khoản?"
             android:textSize="15dp"
+            android:textColor="#6c798f"
             android:fontFamily="@font/poppins_light">
 
         </TextView>
