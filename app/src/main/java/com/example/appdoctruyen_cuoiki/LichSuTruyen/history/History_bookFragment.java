@@ -46,8 +46,8 @@ public class History_bookFragment extends Fragment {
 
         firstHis = new ArrayList<>();
         firstHis.add(new history("Boruto",R.drawable.home_list_truyen1));
-        firstHis.add(new history("Tấm Cám",R.drawable.home_list_truyen5));
-        firstHis.add(new history("Truyện Kiều",R.drawable.home_list_truyen6));
-        firstHis.add(new history("Tình Yêu Trở Lại",R.drawable.home_list_truyen3));
+        firstHis.add(new history("Tấm Cám",R.drawable.home_list_truyen1));
+        firstHis.add(new history("Truyện Kiều",R.drawable.home_list_truyen1));
+        firstHis.add(new history("Tình Yêu Trở Lại",R.drawable.home_list_truyen1));
     }
 }

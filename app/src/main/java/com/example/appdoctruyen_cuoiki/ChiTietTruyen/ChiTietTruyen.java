@@ -2,6 +2,8 @@ package com.example.appdoctruyen_cuoiki.ChiTietTruyen;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
@@ -12,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyenFragment.ChapterListFragment;
+import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyenFragment.MoTaFragment;
 import com.example.appdoctruyen_cuoiki.R;
 import com.example.appdoctruyen_cuoiki.ReadBook;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,45 +30,17 @@ public class ChiTietTruyen extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    MyViewPagerAdapter myViewPagerAdapter;
     DatabaseReference databaseReference;
     String idtruyen;
+    String gioithieuuu="";
+    int sochuonglistview=1;
 
+    MoTaFragment moTaFragment;
+    ChapterListFragment chapterListFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chi_tiet_truyen);
-
-        tabLayout = findViewById(R.id.tabLayout);
-        viewPager2 = findViewById(R.id.tabViewPager);
-        myViewPagerAdapter = new MyViewPagerAdapter(this);
-        viewPager2.setAdapter(myViewPagerAdapter);
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager2.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                tabLayout.getTabAt(position).select();
-            }
-        });
-
 
         Intent intent = getIntent();
         idtruyen = intent.getStringExtra("idtruyen");
@@ -92,7 +68,6 @@ public class ChiTietTruyen extends AppCompatActivity {
         TextView title = findViewById(R.id.title);
         TextView author = findViewById(R.id.author);
         TextView sochuong = findViewById(R.id.sochuongchitiet);
-
         databaseReference = FirebaseDatabase.getInstance().getReference("Truyen");
         databaseReference.child(idtruyen).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -103,9 +78,65 @@ public class ChiTietTruyen extends AppCompatActivity {
                     title.setText(String.valueOf(dataSnapshot.child("tentruyen").getValue()));
                     author.setText("Tác giả: "+String.valueOf(dataSnapshot.child("tacgia").getValue()));
                     sochuong.setText(String.valueOf(dataSnapshot.child("sochuong").getValue()));
+                    gioithieuuu = String.valueOf(dataSnapshot.child("mota").getValue());
+                    sochuonglistview = Integer.parseInt(String.valueOf(dataSnapshot.child("sochuong").getValue()));
+                    moTaFragment = new MoTaFragment(gioithieuuu);
+                    chapterListFragment = new ChapterListFragment(sochuonglistview);
+                    createBottomNav();
                 }
             }
         });
 
+
+
+    }
+    public void createBottomNav(){
+        tabLayout = findViewById(R.id.tabLayout);
+        viewPager2 = findViewById(R.id.tabViewPager);
+
+        viewPager2.setAdapter(new FragmentStateAdapter(this) {
+            @NonNull
+            @Override
+            public Fragment createFragment(int position) {
+                switch (position){
+                    case 0:
+                        return moTaFragment;
+                    case 1:
+                        return chapterListFragment;
+                    default:
+                        return moTaFragment;
+                }
+            }
+
+            @Override
+            public int getItemCount() {
+                return 2;
+            }
+        });
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager2.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                tabLayout.getTabAt(position).select();
+            }
+        });
     }
 }

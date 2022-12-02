@@ -45,7 +45,7 @@ public class favBookFragment extends Fragment {
             firstFavBook = new ArrayList<>();
             firstFavBook.add(new favBook("Boruto",R.drawable.home_list_truyen1));
             firstFavBook.add(new favBook("Tàn Chi Lệnh",R.drawable.home_list_truyen2));
-            firstFavBook.add(new favBook("Tình Yêu Trở Lại",R.drawable.home_list_truyen3));
-            firstFavBook.add(new favBook("Vương quốc bí ẩn",R.drawable.home_list_truyen4));
+            firstFavBook.add(new favBook("Tình Yêu Trở Lại",R.drawable.home_list_truyen1));
+            firstFavBook.add(new favBook("Vương quốc bí ẩn",R.drawable.home_list_truyen1));
     }
 }
