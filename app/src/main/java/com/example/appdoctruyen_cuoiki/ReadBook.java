@@ -107,11 +107,9 @@ public class ReadBook extends AppCompatActivity {
         Intent intent = getIntent();
         String idtruyen =intent.getStringExtra("truyen");
         String idchap =intent.getStringExtra("chuong");
-        Log.d("idtruyen", idtruyen);
-        Log.d("idchap", idchap);
         TextView textcontent = findViewById(R.id.textcontent);
         TextView namechap = findViewById(R.id.namechap);
-
+        TextView numberchap = findViewById(R.id.numberchap);
         databaseReference = FirebaseDatabase.getInstance().getReference("Truyen");
         databaseReference.child(idtruyen).child("chuong").child(idchap).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -119,6 +117,7 @@ public class ReadBook extends AppCompatActivity {
                 DataSnapshot dataSnapshot = task.getResult();
                 textcontent.setText(String.valueOf(dataSnapshot.child("noidung").getValue()));
                 namechap.setText(String.valueOf(dataSnapshot.child("tenchuong").getValue()));
+                numberchap.setText("Chương "+String.valueOf(dataSnapshot.child("sothutu").getValue()));
             }
         });
 

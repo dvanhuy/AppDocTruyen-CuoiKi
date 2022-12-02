@@ -57,10 +57,7 @@ public class ChiTietTruyen extends AppCompatActivity {
         beginRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(ChiTietTruyen.this, ReadBook.class);
-                intent1.putExtra("chuong","chuong1");
-                intent1.putExtra("truyen",idtruyen);
-                startActivity(intent1);
+                goToReadBook("chuong1");
             }
         });
 
@@ -138,5 +135,12 @@ public class ChiTietTruyen extends AppCompatActivity {
                 tabLayout.getTabAt(position).select();
             }
         });
+    }
+
+    public void goToReadBook(String idchuong){
+        Intent intent1 = new Intent(ChiTietTruyen.this, ReadBook.class);
+        intent1.putExtra("chuong",idchuong);
+        intent1.putExtra("truyen",idtruyen);
+        startActivity(intent1);
     }
 }

@@ -8,10 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyen;
 import com.example.appdoctruyen_cuoiki.R;
 
 import java.util.ArrayList;
@@ -55,11 +57,18 @@ public class ChapterListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_chapter_list, container, false);
         strings = new ArrayList<>();
         for (int i = 1; i <= sochuong; i++) {
-            strings.add("Chương"+String.valueOf(i));
+            strings.add("Chương "+String.valueOf(i));
         }
         listviewchap = view.findViewById(R.id.listviewchap);
         arrayAdapter =new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,strings);
         listviewchap.setAdapter(arrayAdapter);
+        ChiTietTruyen chiTietTruyen = (ChiTietTruyen) getActivity();
+        listviewchap.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                chiTietTruyen.goToReadBook("chuong"+String.valueOf(i+1));
+            }
+        });
         return view;
     }
 
