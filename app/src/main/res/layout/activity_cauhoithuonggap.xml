@@ -1,0 +1,125 @@
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Cauhoithuonggap">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="#e7e7e7">
+        <ImageView
+            android:id="@+id/backcauhoithuonggap"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="60dp"
+            android:textSize="23dp"
+            android:text="Câu hỏi thường gặp"
+            android:fontFamily="@font/roboto_bold">
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="1. Làm sao đổi màu nền, cỡ chữ, font chữ"
+        android:textColor="#505050"
+        android:textSize="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="- Dùng web trên máy tính: ấn vào nút bánh răng ở bên trái khung đọc truyện.\n - Dùng web trên điện thoại: ấn vào giữa nội dung chương truyện rồi ấn nút bánh răng ở bên dưới.\n Dùng app trên điện thoại: ấn vào giữa nội dung chương truyện rồi chọn Cài đặt. "
+        android:textColor="#505050"
+        android:textSize="15dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="2. Mấy thứ Cấp này nọ là gì vậy?"
+        android:textColor="#505050"
+        android:textSize="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="- Cấp là 1 cách để vinh danh các thành viên tích cực của web. Bạn càng hoạt động tích cực cấp càng cao, lợi ích nhận được càng lớn."
+        android:textColor="#505050"
+        android:textSize="15dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="3. Số liệu đã đọc trong đánh giá truyện là gì?"
+        android:textColor="#505050"
+        android:textSize="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="- Để đánh giá truyện tất nhiên bạn phải đọc truyện đó rồi mới có thể đánh giá được.\n- Số liệu đã đọc thể hiện người đánh giá đã đọc bao nhiêu chương trong truyện đó rồi, số đã đọc càng lớn thì đánh giá càng có tính chính xác cao hơn. Nếu chỉ mới đọc vài chương đã đánh giá thì tất nhiên đánh giá đó không đáng tin cho lắm rồi."
+        android:textColor="#505050"
+        android:textSize="15dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="4. Vì sao tôi bị khóa nick?"
+        android:textColor="#505050"
+        android:textSize="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="- Bạn có thể xem lý do bị khóa nick khi đăng nhập vào web/app. Với lý do: vi phạm hoặc bị tố cáo quá nhiều tức là bạn đã bị trên 100 thẻ phạt và hệ thống tự khóa nick với số ngày tương ứng."
+        android:textColor="#505050"
+        android:textSize="15dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="5. Tôi còn thắc mắc khác?"
+        android:textColor="#505050"
+        android:textSize="20dp">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="- Bạn có thể vào Liên hệ quản trị viên (trên web) hoặc Liên hệ, báo lỗi (trên app) để đặt câu hỏi"
+        android:textColor="#505050"
+        android:textSize="15dp">
+    </TextView>
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
