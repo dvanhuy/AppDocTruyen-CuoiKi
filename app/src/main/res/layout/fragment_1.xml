@@ -29,6 +29,8 @@
                 android:background="@drawable/home_bg_searchbook"
                 android:drawableEnd="@drawable/home_ic_search"
                 android:ems="10"
+                android:textColor="@color/black"
+                android:textColorHint="#515151"
                 android:hint="Tìm kiếm truyện ..."
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -42,6 +44,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Xin chào!"
+                android:textColor="#5C5C5C"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -108,6 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="13dp"
                     android:text="Xem thêm ..."
+                    android:textColor="#5C5C5C"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -119,7 +123,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="25dp"
-                android:background="#FFFAFA"
+                android:background="#F3F3F3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
@@ -237,6 +241,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="13dp"
+                    android:textColor="#5C5C5C"
                     android:text="Xem thêm ..."
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

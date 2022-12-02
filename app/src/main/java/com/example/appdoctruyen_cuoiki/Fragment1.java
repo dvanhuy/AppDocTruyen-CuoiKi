@@ -1,6 +1,7 @@
 package com.example.appdoctruyen_cuoiki;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -77,8 +78,12 @@ public class Fragment1 extends Fragment {
     public void initDataRecycle(){
         LinearLayoutManager layoutManager = new LinearLayoutManager(thiscontext, LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(thiscontext,layoutManager.getOrientation());
-        recyclerView.addItemDecoration(dividerItemDecoration);
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                outRect.right =30;
+            }
+        });
         database = FirebaseDatabase.getInstance().getReference("Truyen");
         ArrayList<Truyen> dataTruyen = new ArrayList<>();
         Home home = (Home) getActivity();
