@@ -22,9 +22,10 @@
 
             <EditText
                 android:id="@+id/searchBook_Home"
-                android:layout_width="381dp"
+                android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:layout_marginBottom="15dp"
+                android:layout_marginHorizontal="25dp"
                 android:background="@drawable/home_bg_searchbook"
                 android:drawableEnd="@drawable/home_ic_search"
                 android:ems="10"
@@ -82,7 +83,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout3"
-                android:layout_width="407dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -113,11 +114,11 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="376dp"
+                android:layout_width="match_parent"
                 android:layout_height="158dp"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="1dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="25dp"
                 android:background="#FFFAFA"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +127,7 @@
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="130dp"
-                    android:layout_height="157dp"
+                    android:layout_height="match_parent"
                     android:src="@drawable/home_img_truyendangdoc"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -207,7 +208,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout5"
-                android:layout_width="407dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -239,8 +240,9 @@
 
             <ViewFlipper
                 android:id="@+id/viewFlipper"
-                android:layout_width="350dp"
-                android:layout_height="180dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
@@ -272,11 +274,11 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview"
-                android:layout_width="376dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/viewFlipper" />
