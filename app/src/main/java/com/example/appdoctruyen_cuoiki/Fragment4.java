@@ -2,12 +2,14 @@ package com.example.appdoctruyen_cuoiki;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -15,6 +17,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,7 +26,6 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class Fragment4 extends Fragment {
-
     public Fragment4() {
         // Required empty public constructor
     }
@@ -55,6 +58,7 @@ public class Fragment4 extends Fragment {
             }
         });
 
+
         Button profile_signup = view.findViewById(R.id.profile_signup);
         profile_signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +67,38 @@ public class Fragment4 extends Fragment {
                 startActivity(intent);
             }
         });
+        TextView txtcauhoithuonggap = view.findViewById(R.id.txtcauhoithuonggap);
+        txtcauhoithuonggap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),Cauhoithuonggap.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView facebook = view.findViewById(R.id.facebook);
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goLink("https://www.facebook.com/");
+            }
+            });
+
+        TextView discord = view.findViewById(R.id.discord);
+        discord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goLink("https://discord.com/");
+            }
+        });
+
         return view;
     }
+
+    private void goLink(String s) {
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+    }
+
+
 }

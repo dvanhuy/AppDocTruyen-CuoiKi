@@ -44,7 +44,6 @@ public class Home extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        Log.d("TAG", dangnhap.toString());
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment1).commit();
                         return true;
                     case R.id.nav_list:

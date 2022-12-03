@@ -32,7 +32,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editTextSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -40,9 +40,11 @@
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/khampha_bg_search"
                 android:drawableStart="@drawable/home_ic_search"
+                android:drawablePadding="10dp"
                 android:ems="20"
-                android:hint="Truyện, Tác giả, Thể loại, v.v."
-                android:inputType="textPersonName"
+                android:imeOptions="actionSearch"
+                android:hint="Tìm tên truyện"
+                android:inputType="text"
                 android:textColor="#000000"
                 android:textColorHint="#5A5A5A"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +60,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+                app:layout_constraintTop_toBottomOf="@+id/editTextSearch">
 
 
                 <TextView
