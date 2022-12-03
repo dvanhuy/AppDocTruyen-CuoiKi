@@ -112,13 +112,24 @@ public class Fragment2 extends Fragment {
         dataTheLoai.add(new TheLoaiTruyen("Cổ Đại","codai", R.drawable.khampha_ic_codai));
         dataTheLoai.add(new TheLoaiTruyen("Dị Giới","digioi", R.drawable.khampha_ic_digioi));
 
-        TheLoaiTruyenRecycleAdapter theLoaiAdapter = new TheLoaiTruyenRecycleAdapter(dataTheLoai,thiscontext);
+        TheLoaiTruyenRecycleAdapter theLoaiAdapter = new TheLoaiTruyenRecycleAdapter(dataTheLoai, thiscontext, new TheLoaiTruyenRecycleAdapter.IClickItemListener() {
+            @Override
+            public void onClickItem(String theloaitruyen) {
+                searchCategory(theloaitruyen);
+            }
+        });
         recyclerView.setAdapter(theLoaiAdapter);
     }
 
     public void searchTruyen(String id){
         Intent intent = new Intent(getActivity(),TimKiemTruyen.class);
         intent.putExtra("tentimkiem",id);
+        startActivity(intent);
+    }
+
+    public void searchCategory(String theloai){
+        Intent intent = new Intent(getActivity(),TimKiemTruyen.class);
+        intent.putExtra("theloaitimkiem",theloai);
         startActivity(intent);
     }
 }

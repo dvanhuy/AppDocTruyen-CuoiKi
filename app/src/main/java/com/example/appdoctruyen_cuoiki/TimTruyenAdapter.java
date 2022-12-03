@@ -38,6 +38,7 @@ public class TimTruyenAdapter extends RecyclerView.Adapter<TimTruyenAdapter.View
     public void onBindViewHolder(@NonNull TimTruyenAdapter.ViewHolder holder, int position) {
         holder.tentruyen.setText(listTruyen.get(position).getTentruyen());
         holder.mota.setText(listTruyen.get(position).getMota());
+        holder.sochuong.setText("Số chương : "+listTruyen.get(position).getSoChuong());
 //        holder.hinhAnh.setImageResource(listTruyen.get(position).getHinhAnh());
         String idtruyen = listTruyen.get(position).getKey();
         Picasso.get().load(listTruyen.get(position).getImage()).into(holder.hinhAnh);
@@ -51,19 +52,21 @@ public class TimTruyenAdapter extends RecyclerView.Adapter<TimTruyenAdapter.View
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listTruyen.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tentruyen,mota;
+        TextView tentruyen,mota,sochuong;
         ImageView hinhAnh;
         ConstraintLayout itemclick;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tentruyen = itemView.findViewById(R.id.tentruyen);
             mota = itemView.findViewById(R.id.motatruyen);
+            sochuong = itemView.findViewById(R.id.sochuongtxt);
             hinhAnh = itemView.findViewById(R.id.imgbiatruyen);
             itemclick = itemView.findViewById(R.id.itemtruyen);
+
         }
     }
 
