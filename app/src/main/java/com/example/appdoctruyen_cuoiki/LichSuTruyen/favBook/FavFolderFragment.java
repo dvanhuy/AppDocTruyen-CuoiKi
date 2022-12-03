@@ -46,6 +46,7 @@ public class FavFolderFragment extends Fragment {
     FavFolderAdapter favFolderAdapter;
     TextView tvAdd;
     Context thiscontext;
+
     public FavFolderFragment() {
     }
 
@@ -54,13 +55,9 @@ public class FavFolderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         firstFolder = new ArrayList<>();
-
         View view = inflater.inflate(R.layout.fragment_fav_folder, container, false);
-
         thiscontext = getContext();
-
         tvAdd = view.findViewById(R.id.fav_folder_add);
-
         rcvFavFolder = view.findViewById(R.id.rcv_favFolder);
         favFolderAdapter = new FavFolderAdapter(getContext(), firstFolder, new FavFolderAdapter.IClickItemListener() {
             @Override
@@ -136,14 +133,14 @@ public class FavFolderFragment extends Fragment {
         buttonXacNhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                databaseReference = FirebaseDatabase.getInstance().getReference("YeuThich");
-                String id = databaseReference.push().getKey();
-                databaseReference.child(id).setValue(ten).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(thiscontext, "Thanhcong", Toast.LENGTH_SHORT).show();
-                    }
-                });
+//                databaseReference = FirebaseDatabase.getInstance().getReference("YeuThich");
+//                String id = databaseReference.push().getKey();
+//                databaseReference.child(id).setValue(ten).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        Toast.makeText(thiscontext, "Thanhcong", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
             }
         });
 
@@ -156,5 +153,4 @@ public class FavFolderFragment extends Fragment {
 
         dialog.show();
     }
-
 }

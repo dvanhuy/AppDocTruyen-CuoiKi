@@ -28,9 +28,10 @@
                 android:id="@+id/giandongcong"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/readbook_btdialog"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editTextGiandong"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/readboox_ic_increase" />
 
@@ -60,20 +61,19 @@
                 android:id="@+id/giandongtru"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/readbook_btdialog"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintEnd_toStartOf="@+id/editTextGiandong"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/readbook_ic_descrease" />
 
             <EditText
                 android:id="@+id/editTextGiandong"
-                android:layout_width="100dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:enabled="false"
                 android:ems="10"
+                android:enabled="false"
                 android:gravity="center"
                 android:inputType="number"
                 android:text="7"
@@ -81,7 +81,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/giandongtru"
+                app:layout_constraintEnd_toStartOf="@+id/giandongcong"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -103,9 +103,10 @@
                 android:id="@+id/cochucong"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/readbook_btdialog"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editTextcochu"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/readboox_ic_increase" />
 
@@ -135,16 +136,15 @@
                 android:id="@+id/cochutru"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="30dp"
                 android:background="@drawable/readbook_btdialog"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintEnd_toStartOf="@+id/editTextcochu"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/readbook_ic_descrease" />
 
             <EditText
                 android:id="@+id/editTextcochu"
-                android:layout_width="100dp"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:ems="10"
@@ -156,7 +156,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cochutru"
+                app:layout_constraintEnd_toStartOf="@+id/cochucong"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 

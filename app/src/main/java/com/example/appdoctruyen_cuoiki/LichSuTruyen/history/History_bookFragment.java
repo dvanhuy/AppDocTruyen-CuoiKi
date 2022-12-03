@@ -95,20 +95,30 @@ public class History_bookFragment extends Fragment {
 
     public void initHistory(){
         databaseReference = FirebaseDatabase.getInstance().getReference("lichsu");
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                DataSnapshot snapshot = task.getResult();
                 truyenList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     getHistory(dataSnapshot.getValue().toString());
                 }
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
-            }
         });
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                truyenList.clear();
+//                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+//                    getHistory(dataSnapshot.getValue().toString());
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Toast.makeText(getContext(), "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     public void getHistory(String idtruyen){
@@ -145,12 +155,16 @@ public class History_bookFragment extends Fragment {
                         for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                             dataSnapshot.getRef().removeValue();
                         }
+                        truyenList.clear();
+                        initHistory();
+                        timTruyenAdapter.notifyDataSetChanged();
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
                     }
                 });
+
             }
         });
         alterDialog.setNegativeButton("Không", new DialogInterface.OnClickListener(){

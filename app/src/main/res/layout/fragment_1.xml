@@ -20,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <AutoCompleteTextView
+            <EditText
                 android:id="@+id/searchBook_Home"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
