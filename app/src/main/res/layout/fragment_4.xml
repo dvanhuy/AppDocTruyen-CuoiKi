@@ -138,7 +138,6 @@
             android:text="Câu hỏi thường gặp"
             android:textColor="#505050"
             android:textSize="20dp">
-
         </TextView>
     </LinearLayout>
 
@@ -197,6 +196,7 @@
         </ImageView>
 
         <TextView
+            android:id="@+id/facebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -219,6 +219,7 @@
         </ImageView>
 
         <TextView
+            android:id="@+id/discord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
