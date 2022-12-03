@@ -48,6 +48,13 @@ public class TimTruyenAdapter extends RecyclerView.Adapter<TimTruyenAdapter.View
                 clickItemListener.onClickItem(idtruyen);
             }
         });
+        holder.itemclick.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                clickItemListener.onLongClickItem(idtruyen);
+                return false;
+            }
+        });
     }
 
     @Override
@@ -72,5 +79,6 @@ public class TimTruyenAdapter extends RecyclerView.Adapter<TimTruyenAdapter.View
 
     public interface IClickItemListener{
         void onClickItem(String idtruyen);
+        void onLongClickItem(String idtruyen);
     }
 }

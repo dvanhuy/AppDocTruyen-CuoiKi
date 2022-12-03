@@ -63,6 +63,11 @@ public class TimKiemTruyen extends AppCompatActivity {
                 intent.putExtra("idtruyen",idtruyen);
                 startActivity(intent);
             }
+
+            @Override
+            public void onLongClickItem(String idtruyen) {
+
+            }
         });
 
         recylerViewTimkiem.setAdapter(timTruyenAdapter);

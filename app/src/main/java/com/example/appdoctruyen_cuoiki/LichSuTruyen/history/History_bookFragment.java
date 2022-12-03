@@ -1,11 +1,13 @@
 package com.example.appdoctruyen_cuoiki.LichSuTruyen.history;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +32,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
@@ -77,6 +80,11 @@ public class History_bookFragment extends Fragment {
                 intent.putExtra("idtruyen",idtruyen);
                 startActivity(intent);
             }
+
+            @Override
+            public void onLongClickItem(String idtruyen) {
+                Xoa(idtruyen);
+            }
         });
         rcvHis.setAdapter(timTruyenAdapter);
         truyenList.clear();
@@ -90,6 +98,7 @@ public class History_bookFragment extends Fragment {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                truyenList.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     getHistory(dataSnapshot.getValue().toString());
                 }
@@ -118,6 +127,39 @@ public class History_bookFragment extends Fragment {
                 timTruyenAdapter.notifyDataSetChanged();
             }
         });
+    }
+
+    private void Xoa(String idcanxoa){
+        AlertDialog.Builder alterDialog  = new AlertDialog.Builder(getContext());
+        alterDialog.setTitle("Thông báo ");
+        alterDialog.setIcon(R.mipmap.ic_launcher);
+        alterDialog.setMessage("Bạn có muốn xóa mặt hàng này không ?");
+        alterDialog.setPositiveButton("Có", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("lichsu");
+                Query query = ref.orderByValue().equalTo(idcanxoa);
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                            dataSnapshot.getRef().removeValue();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+        alterDialog.setNegativeButton("Không", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        alterDialog.show();
     }
 
 }

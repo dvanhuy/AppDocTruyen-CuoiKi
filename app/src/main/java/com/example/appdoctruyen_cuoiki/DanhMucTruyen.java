@@ -68,6 +68,11 @@ public class DanhMucTruyen extends AppCompatActivity {
                 intent.putExtra("idtruyen",idtruyen);
                 startActivity(intent);
             }
+
+            @Override
+            public void onLongClickItem(String idtruyen) {
+
+            }
         });
         recylerViewYeuThich.setAdapter(timTruyenAdapter);
         databaseReference = FirebaseDatabase.getInstance().getReference("YeuThich");
