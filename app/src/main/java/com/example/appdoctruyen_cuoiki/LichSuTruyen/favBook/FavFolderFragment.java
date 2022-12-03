@@ -1,7 +1,11 @@
 package com.example.appdoctruyen_cuoiki.LichSuTruyen.favBook;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,12 +14,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.appdoctruyen_cuoiki.DanhMucTruyen;
 import com.example.appdoctruyen_cuoiki.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,7 +44,8 @@ public class FavFolderFragment extends Fragment {
     private List<FavFolder> firstFolder;
     DatabaseReference databaseReference;
     FavFolderAdapter favFolderAdapter;
-
+    TextView tvAdd;
+    Context thiscontext;
     public FavFolderFragment() {
     }
 
@@ -43,6 +56,11 @@ public class FavFolderFragment extends Fragment {
         firstFolder = new ArrayList<>();
 
         View view = inflater.inflate(R.layout.fragment_fav_folder, container, false);
+
+        thiscontext = getContext();
+
+        tvAdd = view.findViewById(R.id.fav_folder_add);
+
         rcvFavFolder = view.findViewById(R.id.rcv_favFolder);
         favFolderAdapter = new FavFolderAdapter(getContext(), firstFolder, new FavFolderAdapter.IClickItemListener() {
             @Override
@@ -62,6 +80,14 @@ public class FavFolderFragment extends Fragment {
         rcvFavFolder.setLayoutManager(new LinearLayoutManager(getActivity()));
         rcvFavFolder.setAdapter(favFolderAdapter);
         initData();
+
+        tvAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(Gravity.CENTER);
+            }
+        });
+
         return view;
     }
 
@@ -87,4 +113,48 @@ public class FavFolderFragment extends Fragment {
             }
         });
     }
+    public void openDialog(int gravity){
+        Dialog dialog = new Dialog(thiscontext);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog_add_folder);
+        dialog.setTitle("Tạo Folder");
+        Window window = dialog.getWindow();
+
+        if (window == null){
+            return;
+        }
+
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        WindowManager.LayoutParams winLayoutAttributes = window.getAttributes();
+        winLayoutAttributes.gravity = gravity;
+
+        EditText ten = dialog.findViewById(R.id.txtAddFolder);
+        TextView buttonXacNhan = dialog.findViewById(R.id.btXacNhan);
+        TextView buttonHuy = dialog.findViewById(R.id.btHuy);
+
+        buttonXacNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                databaseReference = FirebaseDatabase.getInstance().getReference("YeuThich");
+                String id = databaseReference.push().getKey();
+                databaseReference.child(id).setValue(ten).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(thiscontext, "Thanhcong", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        buttonHuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
 }
