@@ -17,11 +17,9 @@ public class Cauhoithuonggap extends AppCompatActivity {
         backcauhoithuonggap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Cauhoithuonggap.this,Fragment4.class);
-                startActivity(intent);
+                finish();
             }
         });
-
 
     }
 }

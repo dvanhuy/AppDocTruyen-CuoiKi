@@ -67,6 +67,15 @@ public class Fragment4 extends Fragment {
                 startActivity(intent);
             }
         });
+        TextView txtcauhoithuonggap = view.findViewById(R.id.txtcauhoithuonggap);
+        txtcauhoithuonggap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),Cauhoithuonggap.class);
+                startActivity(intent);
+            }
+        });
+
         TextView facebook = view.findViewById(R.id.facebook);
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
