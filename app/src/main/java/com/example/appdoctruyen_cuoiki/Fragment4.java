@@ -80,7 +80,7 @@ public class Fragment4 extends Fragment {
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goLink("https://www.facebook.com/");
+                goLink("https://www.facebook.com/100088403080304");
             }
             });
 
@@ -88,7 +88,7 @@ public class Fragment4 extends Fragment {
         discord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goLink("https://discord.com/");
+                goLink("https://discord.gg/MeN2EUNj2D");
             }
         });
 

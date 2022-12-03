@@ -1,5 +1,7 @@
 package com.example.appdoctruyen_cuoiki;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -69,6 +72,36 @@ public class FragmentProfile extends Fragment {
                 home.logOut();
             }
         });
+
+        TextView logincauhoithuonggap = view.findViewById(R.id.logincauhoithuonggap);
+        logincauhoithuonggap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),Cauhoithuonggap.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView facebook = view.findViewById(R.id.facebooklogin);
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goLink("https://www.facebook.com/100088403080304");
+            }
+        });
+
+        TextView discord = view.findViewById(R.id.discordlogin);
+        discord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goLink("https://discord.gg/MeN2EUNj2D");
+            }
+        });
         return view;
     }
+    private void goLink(String s) {
+        Uri uri = Uri.parse(s);
+        startActivity(new Intent(Intent.ACTION_VIEW,uri));
+    }
+
 }

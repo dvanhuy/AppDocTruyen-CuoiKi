@@ -43,6 +43,16 @@ public class SignIn extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageView backhomelogin = findViewById(R.id.backhomelogin);
+        backhomelogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
         TextView signupforgotpass = findViewById(R.id.signupforgotpass);
         signupforgotpass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +61,9 @@ public class SignIn extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
         txtEmail = (EditText) findViewById(R.id.txtemail);
         txtPassWord = (EditText) findViewById(R.id.txtPassWord);
         Button btnLogin = findViewById(R.id.btnSignUp);
