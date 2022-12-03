@@ -1,18 +1,20 @@
-package com.example.appdoctruyen_cuoiki.LichSuTruyen;
+package com.example.appdoctruyen_cuoiki.LichSuTruyen.favBook;
 
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.appdoctruyen_cuoiki.DanhMucTruyen;
 import com.example.appdoctruyen_cuoiki.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,7 +44,14 @@ public class FavFolderFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_fav_folder, container, false);
         rcvFavFolder = view.findViewById(R.id.rcv_favFolder);
-        favFolderAdapter = new FavFolderAdapter(getContext(),firstFolder);
+        favFolderAdapter = new FavFolderAdapter(getContext(), firstFolder, new FavFolderAdapter.IClickItemListener() {
+            @Override
+            public void onClickItem(String idthumuc) {
+                Intent intent = new Intent(getContext(), DanhMucTruyen.class);
+                intent.putExtra("idthumuc",idthumuc);
+                startActivity(intent);
+            }
+        });
         //rcvNovel.setLayoutManager(new GridLayoutManager(getContext(), 3));
         rcvFavFolder.addItemDecoration(new RecyclerView.ItemDecoration() {
             @Override

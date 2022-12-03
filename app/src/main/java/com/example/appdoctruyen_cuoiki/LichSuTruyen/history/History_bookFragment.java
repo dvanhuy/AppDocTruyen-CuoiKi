@@ -1,53 +1,123 @@
 package com.example.appdoctruyen_cuoiki.LichSuTruyen.history;
 
+import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-import com.example.appdoctruyen_cuoiki.LichSuTruyen.favBook.favBook;
-import com.example.appdoctruyen_cuoiki.LichSuTruyen.favBook.favBookAdapter;
+import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyen;
+import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyenFragment.ChapterListFragment;
+import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyenFragment.MoTaFragment;
+import com.example.appdoctruyen_cuoiki.Fragment3;
 import com.example.appdoctruyen_cuoiki.R;
+import com.example.appdoctruyen_cuoiki.TimKiemTruyen;
+import com.example.appdoctruyen_cuoiki.TimTruyenAdapter;
+import com.example.appdoctruyen_cuoiki.Truyen;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 
 public class History_bookFragment extends Fragment {
 
     private RecyclerView rcvHis;
-    private List<history> firstHis;
+    private ArrayList<Truyen> truyenList;
+    DatabaseReference databaseReference;
+    TimTruyenAdapter timTruyenAdapter;
 
     public History_bookFragment() {
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_history_book, container, false);
+        truyenList = new ArrayList<>();
         rcvHis = (RecyclerView) view.findViewById(R.id.rcv_historyBook);
-        historyAdapter adapter = new historyAdapter(getContext(),firstHis);
-        //rcvNovel.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        rcvHis.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rcvHis.setAdapter(adapter);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,false);
+        rcvHis.setLayoutManager(layoutManager);
+        rcvHis.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                outRect.bottom =30;
+            }
+        });
+
+        timTruyenAdapter = new TimTruyenAdapter(truyenList, getContext(), new TimTruyenAdapter.IClickItemListener() {
+            @Override
+            public void onClickItem(String idtruyen) {
+                Intent intent = new Intent(getActivity(), ChiTietTruyen.class);
+                intent.putExtra("idtruyen",idtruyen);
+                startActivity(intent);
+            }
+        });
+        rcvHis.setAdapter(timTruyenAdapter);
+        truyenList.clear();
+
+        initHistory();
         return view;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void initHistory(){
+        databaseReference = FirebaseDatabase.getInstance().getReference("lichsu");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    getHistory(dataSnapshot.getValue().toString());
+                }
+            }
 
-        firstHis = new ArrayList<>();
-        firstHis.add(new history("Boruto",R.drawable.home_list_truyen1));
-        firstHis.add(new history("Tấm Cám",R.drawable.home_list_truyen1));
-        firstHis.add(new history("Truyện Kiều",R.drawable.home_list_truyen1));
-        firstHis.add(new history("Tình Yêu Trở Lại",R.drawable.home_list_truyen1));
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getContext(), "Có lỗi xảy ra", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+    public void getHistory(String idtruyen){
+        DatabaseReference databaseReference2 = FirebaseDatabase.getInstance().getReference("Truyen");
+        databaseReference2.child(idtruyen).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()){
+                    DataSnapshot dataSnapshot = task.getResult();
+                    Truyen truyen = dataSnapshot.getValue(Truyen.class);
+                    String soChuong = String.valueOf(dataSnapshot.child("sochuong").getValue());
+                    truyen.setSoChuong(soChuong);
+                    truyen.setKey(dataSnapshot.getKey());
+                    truyenList.add(truyen);
+                }
+                timTruyenAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+
 }

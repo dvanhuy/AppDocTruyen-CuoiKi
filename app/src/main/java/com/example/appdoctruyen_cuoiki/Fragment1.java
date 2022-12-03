@@ -1,7 +1,6 @@
 package com.example.appdoctruyen_cuoiki;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 
@@ -17,14 +16,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyen;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,7 +42,7 @@ public class Fragment1 extends Fragment {
     Context thiscontext;
     DatabaseReference database;
     RecyclerView recyclerView;
-    AutoCompleteTextView txtSearch;
+
 
     public Fragment1() {
     }
@@ -74,7 +69,6 @@ public class Fragment1 extends Fragment {
         // Inflate the layout for this fragment
         thiscontext = getContext();
         View view = inflater.inflate(R.layout.fragment_1,container,false);
-        txtSearch = view.findViewById(R.id.searchBook_Home);
         viewFlipper = view.findViewById(R.id.viewFlipper);
         viewFlipper.setFlipInterval(3000);//3s
         viewFlipper.setAutoStart(true);
@@ -83,6 +77,17 @@ public class Fragment1 extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         initDataRecycle();
 
+        EditText searchBook_Home = view.findViewById(R.id.searchBook_Home);
+        searchBook_Home.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    Log.d("TAG",v.getText().toString() );
+                    return true;
+                }
+                return false;
+            }
+        });
         return view;
     }
 
@@ -108,7 +113,7 @@ public class Fragment1 extends Fragment {
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<String> listTenTruyenSearch = new ArrayList<>(); //List truyện hiển thị phần search
+                dataTruyen.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren())
                 {
                     Truyen truyen = dataSnapshot.getValue(Truyen.class);
@@ -116,32 +121,8 @@ public class Fragment1 extends Fragment {
                     truyen.setSoChuong(soChuong);
                     truyen.setKey(dataSnapshot.getKey());
                     dataTruyen.add(truyen);
-                    listTenTruyenSearch.add(truyen.getTentruyen());
                 }
                 truyenAdapter.notifyDataSetChanged();
-                ArrayAdapter searchAdapter = new ArrayAdapter(thiscontext, android.R.layout.simple_list_item_1, listTenTruyenSearch); //Adapter Search
-                txtSearch.setAdapter(searchAdapter);
-                txtSearch.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        txtSearch.setText("");
-                    }
-                });
-                txtSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        String tenTr = adapterView.getItemAtPosition(i).toString();
-                        String idTr = "";
-                        for (Truyen truyen : dataTruyen){
-                            if (truyen.getTentruyen().equals(tenTr)){
-                                idTr = truyen.getKey();
-                            }
-                        }
-                        Intent intent = new Intent(getActivity(), ChiTietTruyen.class);
-                        intent.putExtra("idtruyen",idTr);
-                        startActivity(intent);
-                    }
-                });
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

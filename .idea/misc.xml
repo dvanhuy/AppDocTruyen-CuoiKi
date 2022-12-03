@@ -30,6 +30,7 @@
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/readbook_ic_descrease.xml" value="0.1675" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/drawable/readboox_ic_increase.xml" value="0.1675" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_chi_tiet_truyen.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_danh_muc_truyen.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_forgot_pass.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_read_book.xml" value="0.25" />
@@ -42,6 +43,7 @@
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_3.xml" value="0.1" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_4.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_chapter_list.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_fav_book.xml" value="0.10989583333333333" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_fav_folder.xml" value="0.1787037037037037" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_history_book.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_logout.xml" value="0.25" />
@@ -110,7 +112,6 @@
         <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_4.xml" value="0.35733695652173914" />
         <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/layout/line_decu.xml" value="0.35733695652173914" />
         <entry key="..\:/hoc/HK5/Android/AppDTClone/AppDocTruyen-CuoiKi/app/src/main/res/layout/line_khampha.xml" value="0.35733695652173914" />
-        <entry key="..\:/hoc/HK5/Android/CloneTest/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_1.xml" value="0.35733695652173914" />
       </map>
     </option>
   </component>

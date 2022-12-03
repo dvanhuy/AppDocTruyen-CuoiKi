@@ -1,4 +1,4 @@
-package com.example.appdoctruyen_cuoiki.LichSuTruyen;
+package com.example.appdoctruyen_cuoiki.LichSuTruyen.favBook;
 
 public class FavFolder {
 

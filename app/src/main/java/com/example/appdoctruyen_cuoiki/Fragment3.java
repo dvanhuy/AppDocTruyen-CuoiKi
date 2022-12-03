@@ -6,13 +6,23 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-import com.example.appdoctruyen_cuoiki.LichSuTruyen.FavFolderFragment;
+import com.example.appdoctruyen_cuoiki.LichSuTruyen.favBook.FavFolderFragment;
 import com.example.appdoctruyen_cuoiki.LichSuTruyen.history.History_bookFragment;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class Fragment3 extends Fragment {
 
@@ -46,7 +56,6 @@ public class Fragment3 extends Fragment {
         tabLayout2 = view.findViewById(R.id.tabLayout_frag3);
         viewPager2_frag3 = view.findViewById(R.id.tabViewPager2);
         initTabLayoutData();
-
         return view;
     }
 
