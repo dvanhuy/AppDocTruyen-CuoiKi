@@ -1,6 +1,7 @@
 package com.example.appdoctruyen_cuoiki;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 
@@ -116,6 +117,8 @@ public class Fragment2 extends Fragment {
     }
 
     public void searchTruyen(String id){
-
+        Intent intent = new Intent(getActivity(),TimKiemTruyen.class);
+        intent.putExtra("tentimkiem",id);
+        startActivity(intent);
     }
 }

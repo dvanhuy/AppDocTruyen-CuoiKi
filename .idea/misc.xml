@@ -35,6 +35,7 @@
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_reset_pass.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/activity_tim_kiem_truyen.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_1.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_2.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_3.xml" value="0.16018518518518518" />
@@ -46,6 +47,7 @@
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/fragment_profile.xml" value="0.10092592592592593" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/item_favbook.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/item_history.xml" value="0.25" />
+        <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/itemtruyenngang.xml" value="0.24895833333333334" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/line_decu.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/line_khampha.xml" value="0.25" />
         <entry key="..\:/AndroidJava/AppDocTruyen-CuoiKi/app/src/main/res/layout/settingtextdialog.xml" value="0.25" />

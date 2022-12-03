@@ -113,14 +113,13 @@ public class Fragment1 extends Fragment {
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dataTruyen.clear();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren())
                 {
                     Truyen truyen = dataSnapshot.getValue(Truyen.class);
                     String soChuong = String.valueOf(dataSnapshot.child("sochuong").getValue());
                     truyen.setSoChuong(soChuong);
                     truyen.setKey(dataSnapshot.getKey());
-                    String imgURL = String.valueOf(dataSnapshot.child("image").getValue());
-                    truyen.setImage(imgURL);
                     dataTruyen.add(truyen);
                 }
                 truyenAdapter.notifyDataSetChanged();
