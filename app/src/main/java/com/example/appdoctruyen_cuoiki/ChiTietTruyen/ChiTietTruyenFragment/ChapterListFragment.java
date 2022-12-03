@@ -2,6 +2,7 @@ package com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyenFragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -15,6 +16,11 @@ import android.widget.TextView;
 
 import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyen;
 import com.example.appdoctruyen_cuoiki.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 

@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:background="@drawable/readbook_bgdialog"
         android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,19 +25,19 @@
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
             <ImageView
-                android:id="@+id/imageView42"
+                android:id="@+id/giandongcong"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/readbook_btdialog"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editTextNumber2"
+                app:layout_constraintStart_toEndOf="@+id/editTextGiandong"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/readboox_ic_increase" />
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/chapernext"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,13 +51,13 @@
                 android:layout_marginStart="20dp"
                 android:text="Giãn dòng"
                 android:textColor="#000000"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/chapernext"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView32"
+                android:id="@+id/giandongtru"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="30dp"
@@ -68,10 +68,11 @@
                 app:srcCompat="@drawable/readbook_ic_descrease" />
 
             <EditText
-                android:id="@+id/editTextNumber2"
+                android:id="@+id/editTextGiandong"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
+                android:enabled="false"
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number"
@@ -80,7 +81,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView32"
+                app:layout_constraintStart_toEndOf="@+id/giandongtru"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -91,7 +92,7 @@
             android:layout_width="0dp"
             android:layout_height="51dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -99,19 +100,19 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/cochucong"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/readbook_btdialog"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/editTextNumber"
+                app:layout_constraintStart_toEndOf="@+id/editTextcochu"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/readboox_ic_increase" />
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -125,13 +126,13 @@
                 android:layout_marginStart="20dp"
                 android:text="Cỡ chữ"
                 android:textColor="#000000"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/cochutru"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="30dp"
@@ -142,11 +143,12 @@
                 app:srcCompat="@drawable/readbook_ic_descrease" />
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/editTextcochu"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:ems="10"
+                android:enabled="false"
                 android:gravity="center"
                 android:inputType="number"
                 android:text="20"
@@ -154,7 +156,7 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintStart_toEndOf="@+id/cochutru"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 

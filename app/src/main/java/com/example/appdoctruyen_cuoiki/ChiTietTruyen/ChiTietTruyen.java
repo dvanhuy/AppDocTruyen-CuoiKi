@@ -84,8 +84,6 @@ public class ChiTietTruyen extends AppCompatActivity {
             }
         });
 
-
-
     }
     public void createBottomNav(){
         tabLayout = findViewById(R.id.tabLayout);
