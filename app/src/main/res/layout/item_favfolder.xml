@@ -11,7 +11,7 @@
     <RelativeLayout
         android:id="@+id/folder_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:orientation="vertical">
 
         <ImageView
@@ -21,16 +21,19 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_folder_special_24" />
+
         <TextView
             android:id="@+id/tv_favFolder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="23dp"
             android:layout_toEndOf="@+id/img_favFolder"
-            android:textSize="20dp"
+            android:padding="10dp"
+            android:text="Folder 1"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Folder 1"/>
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="wrap_content"

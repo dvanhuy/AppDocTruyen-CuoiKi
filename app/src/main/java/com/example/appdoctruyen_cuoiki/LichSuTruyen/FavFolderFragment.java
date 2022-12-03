@@ -1,7 +1,9 @@
 package com.example.appdoctruyen_cuoiki.LichSuTruyen;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,9 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.appdoctruyen_cuoiki.LichSuTruyen.history.history;
-import com.example.appdoctruyen_cuoiki.LichSuTruyen.history.historyAdapter;
 import com.example.appdoctruyen_cuoiki.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +27,9 @@ import java.util.List;
 public class FavFolderFragment extends Fragment {
 
     private RecyclerView rcvFavFolder;
-    private List<favFolder> firstFolder;
+    private List<FavFolder> firstFolder;
+    DatabaseReference databaseReference;
+    FavFolderAdapter favFolderAdapter;
 
     public FavFolderFragment() {
     }
@@ -31,23 +38,44 @@ public class FavFolderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        firstFolder = new ArrayList<>();
+
         View view = inflater.inflate(R.layout.fragment_fav_folder, container, false);
         rcvFavFolder = view.findViewById(R.id.rcv_favFolder);
-        favFolderAdapter adapter = new favFolderAdapter(getContext(),firstFolder);
+        favFolderAdapter = new FavFolderAdapter(getContext(),firstFolder);
         //rcvNovel.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        rcvFavFolder.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                outRect.bottom =30;
+            }
+        });
         rcvFavFolder.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rcvFavFolder.setAdapter(adapter);
+        rcvFavFolder.setAdapter(favFolderAdapter);
+        initData();
         return view;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void initData(){
+        databaseReference = FirebaseDatabase.getInstance().getReference("YeuThich");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                firstFolder.clear();
+                for(DataSnapshot dataSnapshot : snapshot.getChildren())
+                {
+                    String idtruyen = String.valueOf(dataSnapshot.getKey());
+                    String tentruyen = String.valueOf(dataSnapshot.child("ten").getValue());
+                    FavFolder favFolder = new FavFolder(idtruyen,tentruyen);
+                    firstFolder.add(favFolder);
+                }
+                favFolderAdapter.notifyDataSetChanged();
+            }
 
-        firstFolder = new ArrayList<>();
-        firstFolder.add(new favFolder("Truyện hay"));
-        firstFolder.add(new favFolder("Truyện mới đọc"));
-        firstFolder.add(new favFolder("Truyện dở"));
-        firstFolder.add(new favFolder("Truyện ..."));
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

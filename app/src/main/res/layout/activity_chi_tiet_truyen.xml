@@ -248,6 +248,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:tabIndicatorColor="@color/black"
+                        android:background="@color/white"
                         app:tabSelectedTextColor="@color/black"
                         app:tabTextColor="#A3A3A3">
 

@@ -16,6 +16,10 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout_frag3"
             android:layout_width="match_parent"
+            app:tabIndicatorColor="@color/black"
+            android:background="@color/white"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="#A3A3A3"
             android:layout_height="wrap_content">
 
             <com.google.android.material.tabs.TabItem
