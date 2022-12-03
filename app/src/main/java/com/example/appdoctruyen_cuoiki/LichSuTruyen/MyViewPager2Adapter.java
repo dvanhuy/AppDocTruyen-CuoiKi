@@ -31,11 +31,11 @@ public class MyViewPager2Adapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 0:
-                return new favBookFragment();
-            case 1:
                 return new History_bookFragment();
+            case 1:
+                return new FavFolderFragment();
             default:
-                return new favBookFragment();
+                return new History_bookFragment();
         }
     }
 

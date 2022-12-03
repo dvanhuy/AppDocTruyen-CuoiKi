@@ -22,13 +22,13 @@
                 android:id="@+id/tabItemFav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Truyện Yêu Thích" />
+                android:text="Lịch sử đọc" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItemHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Lịch sử đọc" />
+                android:text="Truyện Yêu Thích" />
 
         </com.google.android.material.tabs.TabLayout>
 
