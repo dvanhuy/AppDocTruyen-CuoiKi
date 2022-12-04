@@ -1,10 +1,12 @@
 package com.example.appdoctruyen_cuoiki;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -32,8 +34,8 @@ public class DanhMucTruyen extends AppCompatActivity {
     DatabaseReference databaseReference;
     TimTruyenAdapter timTruyenAdapter;
     EditText tenthumuc;
-
     String idthumuc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +79,7 @@ public class DanhMucTruyen extends AppCompatActivity {
 
             @Override
             public void onLongClickItem(String idtruyen) {
-
+                Xoa(idtruyen);
             }
         });
         recylerViewYeuThich.setAdapter(timTruyenAdapter);
@@ -118,5 +120,40 @@ public class DanhMucTruyen extends AppCompatActivity {
                 timTruyenAdapter.notifyDataSetChanged();
             }
         });
+    }
+
+    private void Xoa(String idcanxoa){
+        AlertDialog.Builder alterDialog  = new AlertDialog.Builder(this);
+        alterDialog.setTitle("Thông báo ");
+        alterDialog.setIcon(R.mipmap.ic_launcher);
+        alterDialog.setMessage("Bạn có muốn xóa truyện khỏi lịch sử không ?");
+        alterDialog.setPositiveButton("Có", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("YeuThich");
+                ref.child(idthumuc).child("truyen").orderByValue().equalTo(idcanxoa).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()){
+                            for (DataSnapshot data:snapshot.getChildren()) {
+                                data.getRef().removeValue();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+        alterDialog.setNegativeButton("Không", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        alterDialog.show();
     }
 }

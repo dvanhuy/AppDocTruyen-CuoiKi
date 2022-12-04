@@ -143,6 +143,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="Chương 2/2"
+                    android:textColor="#4C4C4C"
                     android:textStyle="italic"
                     app:layout_constraintStart_toEndOf="@+id/chapernext"
                     app:layout_constraintTop_toBottomOf="@+id/textView6" />

@@ -1,11 +1,16 @@
 package com.example.appdoctruyen_cuoiki;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.constraintlayout.utils.widget.ImageFilterView;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -43,6 +48,7 @@ public class ReadBook extends AppCompatActivity {
     DatabaseReference databaseReference;
     TextView textcontent, namechap,numberchap;
     int textsizeg=20,giandongg=7;
+    ImageView imageViewbookmark;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -72,7 +78,7 @@ public class ReadBook extends AppCompatActivity {
                     imageViewstar.setImageResource(R.drawable.readbook_ic_star_yellow);
                     favourite=1;
                 }
-                else{
+                else {
                     imageViewstar.setImageResource(R.drawable.readbook_ic_star);
                     favourite=0;
                 }
@@ -80,17 +86,14 @@ public class ReadBook extends AppCompatActivity {
         });
 
         bookmarkbutton = findViewById(R.id.bookmarkbutton);
-        ImageView imageViewbookmark= findViewById(R.id.imgviewbookmark);
+        imageViewbookmark= findViewById(R.id.imgviewbookmark);
         bookmarkbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (bookmark == 0){
-                    imageViewbookmark.setImageResource(R.drawable.readbook_ic_bookmark_yellow);
-                    bookmark=1;
-                }
-                else{
-                    imageViewbookmark.setImageResource(R.drawable.readbook_ic_bookmark);
-                    bookmark=0;
+                    Intent intent = new Intent(ReadBook.this,SaveBookMark.class);
+                    intent.putExtra("idtruyen",idtruyen);
+                    getResultBookMark.launch(intent);
                 }
             }
         });
@@ -242,4 +245,19 @@ public class ReadBook extends AppCompatActivity {
             }
         });
     }
+
+    private ActivityResultLauncher<Intent> getResultBookMark =registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK){
+                        imageViewbookmark.setImageResource(R.drawable.readbook_ic_bookmark_yellow);
+                        bookmark=1;
+                    }
+                    if (result.getResultCode() == Activity.RESULT_CANCELED){
+                    }
+                }
+            }
+    );
 }

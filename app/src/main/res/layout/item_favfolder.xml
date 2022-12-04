@@ -24,9 +24,12 @@
 
         <TextView
             android:id="@+id/tv_favFolder"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginEnd="50dp"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:layout_marginBottom="23dp"
             android:layout_toEndOf="@+id/img_favFolder"
             android:padding="10dp"
@@ -36,6 +39,7 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/imgtemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"

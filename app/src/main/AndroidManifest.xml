@@ -16,6 +16,9 @@
         android:theme="@style/Theme.AppDocTruyen_CuoiKi"
         tools:targetApi="31">
         <activity
+            android:name=".SaveBookMark"
+            android:exported="false" />
+        <activity
             android:name=".DanhMucTruyen"
             android:exported="false" />
         <activity

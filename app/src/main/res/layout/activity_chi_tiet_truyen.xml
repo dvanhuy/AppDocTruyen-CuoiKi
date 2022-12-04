@@ -63,14 +63,19 @@
 
                 <TextView
                     android:id="@+id/title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/imageView5"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:layout_marginTop="10dp"
                     android:text="Harry Potter và Hoàng tử lai"
-                    android:textSize="20dp"
                     android:textColor="@color/black"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -115,6 +120,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Phát hành"
+                                android:textColor="#303030"
                                 android:textSize="20sp" />
 
                             <TextView
@@ -139,6 +145,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Chương"
+                                android:textColor="#303030"
                                 android:textSize="20sp" />
 
                             <TextView
@@ -163,6 +170,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Ấn bản"
+                                android:textColor="#303030"
                                 android:textSize="20sp" />
 
                             <TextView

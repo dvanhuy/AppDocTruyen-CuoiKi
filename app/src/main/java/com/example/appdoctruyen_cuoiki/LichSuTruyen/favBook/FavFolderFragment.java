@@ -69,7 +69,6 @@ public class FavFolderFragment extends Fragment {
                 intent.putExtra("idthumuc",idthumuc);
                 startActivity(intent);
             }
-
             @Override
             public void onLongClickItem(String idthumuc) {
                 Xoa(idthumuc);
@@ -180,12 +179,12 @@ public class FavFolderFragment extends Fragment {
 }
 
 class AddFolder{
-    String chuong;
+    String truyen;
     String ten;
     public AddFolder(){}
-    public AddFolder(String ten, String chuong) {
+    public AddFolder(String ten, String truyen) {
         this.ten = ten;
-        this.chuong = chuong;
+        this.truyen = truyen;
     }
     public String getTen() {
         return ten;
@@ -193,10 +192,10 @@ class AddFolder{
     public void setTen(String ten) {
         this.ten = ten;
     }
-    public String getChuong() {
-        return chuong;
+    public String getTruyen() {
+        return truyen;
     }
-    public void setChuong(String chuong) {
-        this.chuong = chuong;
+    public void setTruyen(String chuong) {
+        this.truyen = chuong;
     }
 }

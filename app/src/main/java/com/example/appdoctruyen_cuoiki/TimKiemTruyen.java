@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyen;
 import com.example.appdoctruyen_cuoiki.LichSuTruyen.history.History_bookFragment;
@@ -111,6 +112,26 @@ public class TimKiemTruyen extends AppCompatActivity {
     public void initDataCategory(){
         Intent intent1 = getIntent();
         String theloaitimkiem = intent1.getStringExtra("theloaitimkiem");
+        ArrayList<TheLoaiTruyen> dataTheLoaitruyen = new ArrayList<>();
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Tiên Hiệp","tienhiep", R.drawable.khampha_ic_sword));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Huyền Huyễn","huyenhuyen", R.drawable.khampha_ic_rong));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Lịch Sử","lichsu", R.drawable.khampha_ic_book));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Võng Du","vongdu", R.drawable.khampha_ic_game));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Đô Thị","dothi", R.drawable.khampha_ic_city));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Đồng Nhân","dongnhan", R.drawable.khampha_ic_dongnhan));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Trinh Thám","trinhtham", R.drawable.khampha_ic_thamtu));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Hệ Thống","hethong", R.drawable.khampha_ic_hethong));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Linh Dị","linhdi", R.drawable.khampha_ic_linhdi));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Cổ Đại","codai", R.drawable.khampha_ic_codai));
+        dataTheLoaitruyen.add(new TheLoaiTruyen("Dị Giới","digioi", R.drawable.khampha_ic_digioi));
+
+        TextView tentim = findViewById(R.id.textView10);
+        for (TheLoaiTruyen truyen: dataTheLoaitruyen ) {
+            if (truyen.getMatheloai().equals(theloaitimkiem)){
+                tentim.setText(truyen.getTenTheLoai());
+            }
+        }
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Truyen");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override

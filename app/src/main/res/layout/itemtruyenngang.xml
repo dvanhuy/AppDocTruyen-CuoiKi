@@ -38,7 +38,7 @@
             android:maxLines="1"
             android:text="Tên truyện"
             android:textColor="#000000"
-            android:textSize="22sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imgbiatruyen"
             app:layout_constraintTop_toTopOf="parent" />

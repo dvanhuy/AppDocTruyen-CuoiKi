@@ -23,9 +23,9 @@
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
-                android:layout_height="34dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="50dp"
-                android:text="Tìm kiếm"
+                android:text="Lưu vào"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -59,15 +59,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Danh sách tìm kiếm"
+                android:text="Danh sách thư mục"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="23sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recylerViewTimkiem"
+                android:id="@+id/recylerViewthumuc"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginStart="15dp"
