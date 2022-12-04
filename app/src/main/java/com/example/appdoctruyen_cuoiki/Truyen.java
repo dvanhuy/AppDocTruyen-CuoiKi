@@ -2,7 +2,7 @@ package com.example.appdoctruyen_cuoiki;
 
 public class Truyen{
     private String key;
-    private String mota,tacgia,tentruyen;
+    private String mota,tacgia,tentruyen, phathanh, anban;
     private String soChuong, image;
 
     public Truyen() {
@@ -21,6 +21,33 @@ public class Truyen{
         this.tentruyen = tentruyen;
         this.soChuong = soChuong;
         this.image = image;
+    }
+
+    public Truyen(String key, String mota, String tacgia, String tentruyen, String phathanh, String anban, String soChuong, String image) {
+        this.key = key;
+        this.mota = mota;
+        this.tacgia = tacgia;
+        this.tentruyen = tentruyen;
+        this.phathanh = phathanh;
+        this.anban = anban;
+        this.soChuong = soChuong;
+        this.image = image;
+    }
+
+    public String getPhathanh() {
+        return phathanh;
+    }
+
+    public void setPhathanh(String phathanh) {
+        this.phathanh = phathanh;
+    }
+
+    public String getAnban() {
+        return anban;
+    }
+
+    public void setAnban(String anban) {
+        this.anban = anban;
     }
 
     public String getMota() {

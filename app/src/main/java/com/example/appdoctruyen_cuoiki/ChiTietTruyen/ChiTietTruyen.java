@@ -69,6 +69,8 @@ public class ChiTietTruyen extends AppCompatActivity {
         TextView title = findViewById(R.id.title);
         TextView author = findViewById(R.id.author);
         TextView sochuong = findViewById(R.id.sochuongchitiet);
+        TextView phathanh = findViewById(R.id.txtPhatHanh);
+        TextView anban = findViewById(R.id.txtAnBan);
         databaseReference = FirebaseDatabase.getInstance().getReference("Truyen");
         databaseReference.child(idtruyen).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
@@ -79,6 +81,8 @@ public class ChiTietTruyen extends AppCompatActivity {
                     title.setText(String.valueOf(dataSnapshot.child("tentruyen").getValue()));
                     author.setText("Tác giả: "+String.valueOf(dataSnapshot.child("tacgia").getValue()));
                     sochuong.setText(String.valueOf(dataSnapshot.child("sochuong").getValue()));
+                    phathanh.setText(String.valueOf(dataSnapshot.child("phathanh").getValue()));
+                    anban.setText(String.valueOf(dataSnapshot.child("anban").getValue()));
                     gioithieuuu = String.valueOf(dataSnapshot.child("mota").getValue());
                     sochuonglistview = Integer.parseInt(String.valueOf(dataSnapshot.child("sochuong").getValue()));
                     moTaFragment = new MoTaFragment(gioithieuuu);
