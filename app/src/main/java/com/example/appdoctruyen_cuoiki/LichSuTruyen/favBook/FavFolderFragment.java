@@ -2,6 +2,7 @@ package com.example.appdoctruyen_cuoiki.LichSuTruyen.favBook;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Rect;
@@ -9,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,6 +34,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -65,6 +68,11 @@ public class FavFolderFragment extends Fragment {
                 Intent intent = new Intent(getContext(), DanhMucTruyen.class);
                 intent.putExtra("idthumuc",idthumuc);
                 startActivity(intent);
+            }
+
+            @Override
+            public void onLongClickItem(String idthumuc) {
+                Xoa(idthumuc);
             }
         });
         //rcvNovel.setLayoutManager(new GridLayoutManager(getContext(), 3));
@@ -133,14 +141,9 @@ public class FavFolderFragment extends Fragment {
         buttonXacNhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                databaseReference = FirebaseDatabase.getInstance().getReference("YeuThich");
-//                String id = databaseReference.push().getKey();
-//                databaseReference.child(id).setValue(ten).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<Void> task) {
-//                        Toast.makeText(thiscontext, "Thanhcong", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
+                databaseReference = FirebaseDatabase.getInstance().getReference("YeuThich");
+                databaseReference.push().setValue(new AddFolder(ten.getText().toString(),""));
+                dialog.dismiss();
             }
         });
 
@@ -152,5 +155,48 @@ public class FavFolderFragment extends Fragment {
         });
 
         dialog.show();
+    }
+    private void Xoa(String idcanxoa){
+        AlertDialog.Builder alterDialog  = new AlertDialog.Builder(getContext());
+        alterDialog.setTitle("Thông báo ");
+        alterDialog.setIcon(R.mipmap.ic_launcher);
+        alterDialog.setMessage("Bạn có muốn xóa truyện khỏi lịch sử không ?");
+        alterDialog.setPositiveButton("Có", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("YeuThich");
+                ref.child(idcanxoa).removeValue();
+            }
+        });
+        alterDialog.setNegativeButton("Không", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        alterDialog.show();
+    }
+
+}
+
+class AddFolder{
+    String chuong;
+    String ten;
+    public AddFolder(){}
+    public AddFolder(String ten, String chuong) {
+        this.ten = ten;
+        this.chuong = chuong;
+    }
+    public String getTen() {
+        return ten;
+    }
+    public void setTen(String ten) {
+        this.ten = ten;
+    }
+    public String getChuong() {
+        return chuong;
+    }
+    public void setChuong(String chuong) {
+        this.chuong = chuong;
     }
 }

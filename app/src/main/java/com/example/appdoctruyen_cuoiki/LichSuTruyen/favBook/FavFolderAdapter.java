@@ -51,6 +51,14 @@ public class FavFolderAdapter extends RecyclerView.Adapter<FavFolderAdapter.FavF
                 clickItemListener.onClickItem(idadata);
             }
         });
+        holder.folderlayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                clickItemListener.onLongClickItem(idadata);
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -73,5 +81,6 @@ public class FavFolderAdapter extends RecyclerView.Adapter<FavFolderAdapter.FavF
 
     public interface IClickItemListener{
         void onClickItem(String idthumuc);
+        void onLongClickItem(String idthumuc);
     }
 }

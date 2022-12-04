@@ -143,7 +143,7 @@ public class History_bookFragment extends Fragment {
         AlertDialog.Builder alterDialog  = new AlertDialog.Builder(getContext());
         alterDialog.setTitle("Thông báo ");
         alterDialog.setIcon(R.mipmap.ic_launcher);
-        alterDialog.setMessage("Bạn có muốn xóa mặt hàng này không ?");
+        alterDialog.setMessage("Bạn có muốn xóa truyện khỏi lịch sử không ?");
         alterDialog.setPositiveButton("Có", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
