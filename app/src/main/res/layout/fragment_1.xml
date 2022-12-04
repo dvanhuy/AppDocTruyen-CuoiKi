@@ -20,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
+            <AutoCompleteTextView
                 android:id="@+id/searchBook_Home"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
@@ -31,6 +31,8 @@
                 android:ems="10"
                 android:textColor="@color/black"
                 android:textColorHint="#515151"
+                android:dropDownHeight="170dp"
+                android:completionThreshold="1"
                 android:hint="Tìm kiếm truyện ..."
                 android:imeOptions="actionSearch"
                 android:inputType="textPersonName"
@@ -63,18 +65,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-            <androidx.constraintlayout.utils.widget.ImageFilterView
-                android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="13dp"
-                android:src="@drawable/home_imgview_avt"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:roundPercent="@integer/material_motion_duration_long_1"
-                android:scaleType="centerCrop"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -106,16 +96,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="13dp"
-                    android:text="Xem thêm ..."
-                    android:textColor="#5C5C5C"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -133,23 +113,26 @@
                     android:id="@+id/chapernext"
                     android:layout_width="130dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/home_img_truyendangdoc"
+                    android:src="@drawable/home_img_trtieptuc"
+                    android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="5dp"
                     android:ellipsize="end"
                     android:maxLines="1"
+                    android:text="Nương Tử Chỉ Thích Làm Ruộng"
                     android:textColor="#424242"
-                    android:text="Harry Potter và Hoàng Tử Lai"
-                    android:textSize="16sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/chapernext"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -190,7 +173,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button"
+                    android:id="@+id/btTiepTucHarry"
                     android:layout_width="0dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="16dp"
@@ -237,16 +220,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="13dp"
-                    android:textColor="#5C5C5C"
-                    android:text="Xem thêm ..."
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ViewFlipper

@@ -40,16 +40,22 @@ public class DanhMucTruyen extends AppCompatActivity {
         setContentView(R.layout.activity_danh_muc_truyen);
         Intent intent = getIntent();
         idthumuc = intent.getStringExtra("idthumuc");
+        tenthumuc = findViewById(R.id.tenthumuc);
+        recylerViewYeuThich = findViewById(R.id.recylerViewYeuThich);
 
         ImageView imageViewback = findViewById(R.id.imageViewback);
         imageViewback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
+                if(tenthumuc.getText() != null){
+                    databaseReference = FirebaseDatabase.getInstance().getReference("YeuThich");
+                    databaseReference.child(idthumuc).child("ten").setValue(tenthumuc.getText().toString());
+                    finish();
+                }
             }
         });
-        tenthumuc = findViewById(R.id.tenthumuc);
-        recylerViewYeuThich = findViewById(R.id.recylerViewYeuThich);
+
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(DanhMucTruyen.this, LinearLayoutManager.VERTICAL,false);
         recylerViewYeuThich.setLayoutManager(layoutManager);
