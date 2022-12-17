@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Fragment4">
+    tools:context="com.myapplication.appdoctruyen_cuoiki.Fragment4">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

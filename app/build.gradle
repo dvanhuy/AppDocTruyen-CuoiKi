@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.appdoctruyen_cuoiki"
+        applicationId "com.myapplication.appdoctruyen_cuoiki"
         minSdk 21
         targetSdk 32
         versionCode 1

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".ForgotPass">
+    tools:context="com.myapplication.appdoctruyen_cuoiki.ForgotPass">
 
     <ImageView
         android:id="@+id/forgotpassback"

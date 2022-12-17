@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.appdoctruyen_cuoiki">
+    package="com.myapplication.appdoctruyen_cuoiki">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,48 +16,48 @@
         android:theme="@style/Theme.AppDocTruyen_CuoiKi"
         tools:targetApi="31">
         <activity
-            android:name=".SaveBookMark"
+            android:name="com.myapplication.appdoctruyen_cuoiki.SaveBookMark"
             android:exported="false" />
         <activity
-            android:name=".DanhMucTruyen"
+            android:name="com.myapplication.appdoctruyen_cuoiki.DanhMucTruyen"
             android:exported="false" />
         <activity
-            android:name=".TimKiemTruyen"
+            android:name="com.myapplication.appdoctruyen_cuoiki.TimKiemTruyen"
             android:exported="false" />
         <activity
-            android:name=".Cauhoithuonggap"
+            android:name="com.myapplication.appdoctruyen_cuoiki.Cauhoithuonggap"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignInGG"
+            android:name="com.myapplication.appdoctruyen_cuoiki.SignInGG"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ResetPass"
+            android:name="com.myapplication.appdoctruyen_cuoiki.ResetPass"
             android:exported="false" />
         <activity
-            android:name=".ForgotPass"
+            android:name="com.myapplication.appdoctruyen_cuoiki.ForgotPass"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name="com.myapplication.appdoctruyen_cuoiki.SignUp"
             android:exported="false" />
         <activity
-            android:name=".ReadBook"
+            android:name="com.myapplication.appdoctruyen_cuoiki.ReadBook"
             android:exported="false" />
         <activity
-            android:name=".SignIn"
+            android:name="com.myapplication.appdoctruyen_cuoiki.SignIn"
             android:exported="false" />
         <activity
-            android:name=".ChiTietTruyen.ChiTietTruyen"
+            android:name="com.myapplication.appdoctruyen_cuoiki.ChiTietTruyen.ChiTietTruyen"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name="com.myapplication.appdoctruyen_cuoiki.Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
